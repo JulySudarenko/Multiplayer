@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DevAccountEmail: july@sudarenko.ru
   DevAccountToken: sow31bngcnqnhg1orca4qbki1dxg8ra6kxgcuwt6ibchfybgu73m7cfrwwnnfce1n4qti8xkcnic8qg4jpix4rp8kzrux98f34ggnxydm5q8ot3n1zb3i6mn7zirsdw6uzwx7b3byu9fp8n3ekwforqbemiftw6ecdr4k7379hy33h41eommy1447837363wemxbchgz
-  SelectedStudio: _OVERRIDE_
+  SelectedStudio: SUDAR COMPANY
   SdkPath: Assets/PlayFabSDK
   EdExPath: 
   LocalCloudScriptPath: 
