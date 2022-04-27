@@ -7,10 +7,14 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Code" t="Include">
+          <e p="AuthorizationMenu.cs" t="Include" />
           <e p="ButtonColorWidget.cs" t="Include" />
           <e p="ConnectionState.cs" t="Include" />
+          <e p="LoadingIndicatorWidget.cs" t="Include" />
           <e p="PhotonLogin.cs" t="Include" />
           <e p="PlayFabLogin.cs" t="Include" />
+          <e p="SceneLoader.cs" t="Include" />
+          <e p="Starter.cs" t="Include" />
         </e>
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
