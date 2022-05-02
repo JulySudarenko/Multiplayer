@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ButtonColorWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/ButtonColorWidget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ConnectionState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/ConnectionState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/PhotonLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/PhotonLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/PlayFabLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/PlayFabLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/PlayfabLogin.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Launcher.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Launcher.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Code/PlayfabLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/SDK/PhotonLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/SDK/ButtonColorWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/SDK/ConnectionState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/SDK/PlayFabLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/ButtonColorWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/ConnectionState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/PhotonLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Starter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/PlayerInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/AuthorizationMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/LoadingIndicatorWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/PlayFabLogin.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="28EBZypyjBFk9BgLfnHtKB6ZTdp" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.349689" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.2999309" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="34476">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="34476" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="505" height="464" key="DebuggerActiveHint" timestamp="1651062323922">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="505" height="464" key="DebuggerActiveHint/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651062323922" />
+    <state width="1478" height="279" key="GridCell.Tab.0.bottom" timestamp="1651063673781">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.0.bottom/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673781" />
+    <state width="1478" height="279" key="GridCell.Tab.0.center" timestamp="1651063673781">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.0.center/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673781" />
+    <state width="1478" height="279" key="GridCell.Tab.0.left" timestamp="1651063673781">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.0.left/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673781" />
+    <state width="1478" height="279" key="GridCell.Tab.0.right" timestamp="1651063673781">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.0.right/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673781" />
+    <state width="1478" height="279" key="GridCell.Tab.1.bottom" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.1.bottom/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.1.center" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.1.center/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.1.left" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.1.left/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.1.right" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.1.right/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.2.bottom" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.2.bottom/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.2.center" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.2.center/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.2.left" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.2.left/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.2.right" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.2.right/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.3.bottom" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.3.bottom/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.3.center" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.3.center/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.3.left" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.3.left/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state width="1478" height="279" key="GridCell.Tab.3.right" timestamp="1651063673782">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state width="1478" height="279" key="GridCell.Tab.3.right/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651063673782" />
+    <state x="2433" y="-36" key="RiderGenerateDialog" timestamp="1651047301356">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state x="2433" y="-36" key="RiderGenerateDialog/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651047301356" />
+    <state x="2351" y="-1" width="672" height="678" key="search.everywhere.popup" timestamp="1651069316832">
+      <screen x="1920" y="-154" width="1536" height="832" />
+    </state>
+    <state x="2351" y="-1" width="672" height="678" key="search.everywhere.popup/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651069316832" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Code/AuthorizationMenu.cs</url>
+          <line>46</line>
+          <properties documentPath="D:\geekbrains.ru\Projects\Unity\Multiplayer\Assets\Code\AuthorizationMenu.cs" initialLine="30">
+            <startOffsets>
+              <option value="1834" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1870" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
