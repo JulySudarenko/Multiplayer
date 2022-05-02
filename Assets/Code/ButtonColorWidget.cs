@@ -7,7 +7,6 @@ namespace Code
 {
     public class ButtonColorWidget : MonoBehaviour
     {
-        [Header("UI elements")] 
         [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _message;
         [SerializeField] private Image _buttonImage;

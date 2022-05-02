@@ -2,7 +2,6 @@
 using Photon.Realtime;
 using UnityEngine;
 
-
 namespace Code
 {
     public class PhotonLogin : MonoBehaviourPunCallbacks
