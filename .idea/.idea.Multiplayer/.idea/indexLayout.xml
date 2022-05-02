@@ -20,6 +20,7 @@
       <Path>Logs</Path>
       <Path>Temp</Path>
       <Path>obj</Path>
+      <Path>Сatalog</Path>
     </explicitExcludes>
   </component>
 </project>

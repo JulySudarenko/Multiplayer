@@ -9,7 +9,7 @@ namespace Code
         [SerializeField] private ButtonColorWidget _connectButton;
         [SerializeField] private ButtonColorWidget _disconnectButton;
 
-        string gameVersion = "1";
+        private  const string GameVersion = "1";
 
         private void Awake()
         {
@@ -38,7 +38,7 @@ namespace Code
             Connect();
         }
 
-        public void Connect()
+        private void Connect()
         {
             if (PhotonNetwork.IsConnected)
             {
@@ -49,7 +49,7 @@ namespace Code
                 _connectButton.ChangeColor(ConnectionState.Waiting, "Waiting for connection");
 
                 PhotonNetwork.ConnectUsingSettings();
-                PhotonNetwork.GameVersion = gameVersion;
+                PhotonNetwork.GameVersion = GameVersion;
             }
         }
 

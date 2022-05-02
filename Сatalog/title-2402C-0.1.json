@@ -1,0 +1,212 @@
+{
+  "CatalogVersion": "0.1",
+  "Catalog": [
+    {
+      "ItemId": "key01",
+      "ItemClass": "keys",
+      "CatalogVersion": "0.1",
+      "DisplayName": "Key for boxes",
+      "Description": "For container opening",
+      "VirtualCurrencyPrices": {
+        "GD": 10
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "key",
+        "box"
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "potion01",
+      "ItemClass": "potions",
+      "CatalogVersion": "0.1",
+      "DisplayName": "Small heal potion",
+      "Description": "Small potion for regeneration heath. Heal 50 hp.",
+      "VirtualCurrencyPrices": {
+        "GD": 2
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "potion",
+        "heal"
+      ],
+      "CustomData": "{\"Small heal\":\"50\"}",
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": 5,
+        "UsagePeriodGroup": "health_potion"
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "potion02",
+      "ItemClass": "potions",
+      "CatalogVersion": "0.1",
+      "DisplayName": "Medium heal potion",
+      "Description": "Medium potion for regeneration heath. Heal 75 hp.",
+      "VirtualCurrencyPrices": {
+        "GD": 3
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "potion",
+        "heal"
+      ],
+      "CustomData": "{\"Medium heal\":\"75\"}",
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": 7,
+        "UsagePeriodGroup": "health_potion"
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "potion03",
+      "ItemClass": "potions",
+      "CatalogVersion": "0.1",
+      "DisplayName": "Large heal potion",
+      "Description": "Large potion for regeneration heath. Heal 100 hp.",
+      "VirtualCurrencyPrices": {
+        "GD": 5
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "potion",
+        "heal"
+      ],
+      "CustomData": "{\"Large heal\":\"100\"}",
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": 10,
+        "UsagePeriodGroup": "health_potion"
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "Box01",
+      "ItemClass": "keys",
+      "CatalogVersion": "0.1",
+      "DisplayName": null,
+      "Description": "Contains a key for containers",
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": null,
+      "Tags": [],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": {
+        "BundledItems": [
+          "key01"
+        ],
+        "BundledResultTables": [],
+        "BundledVirtualCurrencies": null
+      },
+      "CanBecomeCharacter": true,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "cnt01",
+      "ItemClass": null,
+      "CatalogVersion": "0.1",
+      "DisplayName": "Health box",
+      "Description": "Open for random heath potion",
+      "VirtualCurrencyPrices": {
+        "GD": 5
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": 5,
+        "UsagePeriodGroup": "health_potion"
+      },
+      "Container": {
+        "KeyItemId": "key01",
+        "ItemContents": [],
+        "ResultTableContents": [
+          "dt01"
+        ],
+        "VirtualCurrencyContents": null
+      },
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    }
+  ],
+  "DropTables": [
+    {
+      "TableId": "dt01",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "potion02",
+          "Weight": 2
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "potion03",
+          "Weight": 1
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "potion01",
+          "Weight": 3
+        }
+      ]
+    }
+  ]
+}
