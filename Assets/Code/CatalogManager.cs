@@ -32,6 +32,5 @@ namespace Code
                 Debug.Log($"Catalog item {item.ItemId} was added successfully!");
             }
         }
-
     }
 }
