@@ -54,7 +54,6 @@ namespace Code
                     },
                     success =>
                     {
-                        Debug.Log($"Item successfully bought: {success.Items.Count}");
                         UpdateCurrencyElement();
                     },
                     error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
@@ -84,7 +83,6 @@ namespace Code
                     newItem.gameObject.SetActive(true);
                     var cost = (int) item.VirtualCurrencyPrices["GD"];
                     newItem.ShowItem(item.DisplayName, cost.ToString());
-                    Debug.Log($"Catalog item {item.ItemId} was added successfully!");
 
                     newItem.BuyButton.onClick.AddListener(() => BuyItem(item));
                     _itemStoreElements.Add(newItem);
