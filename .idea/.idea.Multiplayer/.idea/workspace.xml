@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/CatalogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/CatalogManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Launcher.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Launcher.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

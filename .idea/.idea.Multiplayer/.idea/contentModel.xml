@@ -11,6 +11,8 @@
           <e p="ButtonColorWidget.cs" t="Include" />
           <e p="CatalogManager.cs" t="Include" />
           <e p="ConnectionState.cs" t="Include" />
+          <e p="CurrencyStoreElement.cs" t="Include" />
+          <e p="ItemStoreElement.cs" t="Include" />
           <e p="LoadingIndicatorWidget.cs" t="Include" />
           <e p="PhotonLogin.cs" t="Include" />
           <e p="PlayFabLogin.cs" t="Include" />

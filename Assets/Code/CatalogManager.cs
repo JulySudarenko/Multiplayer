@@ -7,29 +7,96 @@ namespace Code
 {
     public class CatalogManager : MonoBehaviour
     {
-        private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string,
-            CatalogItem>();
+        [SerializeField] private CurrencyStoreElement _gold;
+        [SerializeField] private CurrencyStoreElement _experience;
+        [SerializeField] private Transform _content;
+        [SerializeField] private ItemStoreElement _item;
+        private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
+        private List<ItemStoreElement> _itemStoreElements;
+
         private void Start()
         {
-            PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess,
-                OnFailure);
+            PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess, OnFailure);
+            _itemStoreElements = new List<ItemStoreElement>();
+            UpdateCurrencyElement();
         }
+
+        private void UpdateCurrencyElement()
+        {
+            PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(),
+                success =>
+                {
+                    foreach (KeyValuePair<string, int> kv in success.VirtualCurrency)
+                    {
+                        if (kv.Key == "GD")
+                            _gold.ShowCurrency(kv.Key, kv.Value.ToString());
+                        else if (kv.Key == "EX")
+                            _experience.ShowCurrency(kv.Key, kv.Value.ToString());
+                        else
+                        {
+                            Debug.Log(kv);
+                        }
+                    }
+                },
+                error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
+        }
+
+        private void BuyItem(CatalogItem catalogItem)
+        {
+            if (catalogItem.VirtualCurrencyPrices.ContainsKey("GD"))
+            {
+                PlayFabClientAPI.PurchaseItem(new PurchaseItemRequest
+                    {
+                        CatalogVersion = catalogItem.CatalogVersion,
+                        ItemId = catalogItem.ItemId,
+                        Price = (int) catalogItem.VirtualCurrencyPrices["GD"],
+                        VirtualCurrency = "GD"
+                    },
+                    success =>
+                    {
+                        Debug.Log($"Item successfully bought: {success.Items.Count}");
+                        UpdateCurrencyElement();
+                    },
+                    error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
+            }
+        }
+
         private void OnFailure(PlayFabError error)
         {
             var errorMessage = error.GenerateErrorReport();
             Debug.LogError($"Something went wrong: {errorMessage}");
         }
+
         private void OnGetCatalogSuccess(GetCatalogItemsResult result)
         {
             HandleCatalog(result.Catalog);
             Debug.Log($"Catalog was loaded successfully!");
         }
+
         private void HandleCatalog(List<CatalogItem> catalog)
         {
             foreach (var item in catalog)
             {
                 _catalog.Add(item.ItemId, item);
-                Debug.Log($"Catalog item {item.ItemId} was added successfully!");
+                if (item.VirtualCurrencyPrices.Count > 0)
+                {
+                    var newItem = Instantiate(_item, _content);
+                    newItem.gameObject.SetActive(true);
+                    var cost = (int) item.VirtualCurrencyPrices["GD"];
+                    newItem.ShowItem(item.DisplayName, cost.ToString());
+                    Debug.Log($"Catalog item {item.ItemId} was added successfully!");
+
+                    newItem.BuyButton.onClick.AddListener(() => BuyItem(item));
+                    _itemStoreElements.Add(newItem);
+                }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            for (int i = 0; i < _itemStoreElements.Count; i++)
+            {
+                _itemStoreElements[i].BuyButton.onClick.RemoveAllListeners();
             }
         }
     }
