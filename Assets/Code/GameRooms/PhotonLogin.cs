@@ -7,7 +7,7 @@ namespace Code.GameRooms
     public class PhotonLogin : MonoBehaviourPunCallbacks
     {
         private string _roomName;
-
+        [SerializeField] private GameObject _roomsJoinedPanel;
         [SerializeField] private PlayersElement _element;
         [SerializeField] private InputField _roomNameInputField;
         [SerializeField] private Button _createButton;
@@ -20,6 +20,7 @@ namespace Code.GameRooms
             _createButton.onClick.AddListener(OnCreateRoomButtonClicked);
             _startButton.onClick.AddListener(OnStartGameButtonClicked);
             _startButton.gameObject.SetActive(false);
+            _roomsJoinedPanel.SetActive(true);
         }
 
         private void Start()
@@ -57,6 +58,7 @@ namespace Code.GameRooms
 
         public override void OnJoinedRoom()
         {
+            _roomsJoinedPanel.SetActive(false);
             _startButton.gameObject.SetActive(true);
 
             foreach (var p in PhotonNetwork.PlayerList)

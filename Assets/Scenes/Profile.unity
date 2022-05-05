@@ -1242,7 +1242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386308629
 GameObject:
@@ -1842,7 +1842,7 @@ RectTransform:
   m_Children:
   - {fileID: 1017413612}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5283,7 +5283,7 @@ GameObject:
   - component: {fileID: 1100571430}
   - component: {fileID: 1100571431}
   m_Layer: 5
-  m_Name: CurrencyElements
+  m_Name: RoomsJoinedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5447,7 +5447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8280b377e5046ba8ccc169c69e0914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _element: {fileID: 0}
+  _roomsJoinedPanel: {fileID: 1100571429}
+  _element: {fileID: 617874275}
   _roomNameInputField: {fileID: 1202400934}
   _createButton: {fileID: 349422523}
   _startButton: {fileID: 2059216711}
@@ -5463,7 +5464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154877361
 GameObject:
@@ -7505,7 +7506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1511344754
 MonoBehaviour:
@@ -10015,7 +10016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2064365403
 RectTransform:
   m_ObjectHideFlags: 0

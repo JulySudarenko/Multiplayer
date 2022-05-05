@@ -20,33 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/AuthorizationMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/AuthorizationMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/ButtonColorWidget.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/ButtonColorWidget.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/CatalogManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/CatalogManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/ConnectionState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/ConnectionState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/CurrencyStoreElement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/CurrencyStoreElement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/ItemStoreElement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/ItemStoreElement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/LoadingIndicatorWidget.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/LoadingIndicatorWidget.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/PhotonLogin.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/PhotonLogin.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/PlayFabLogin.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/SceneLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/SceneLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Starter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Starter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +60,8 @@
         <option value="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/SetRoomOpenedButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayersElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
       </list>
     </option>
   </component>
