@@ -3,21 +3,28 @@ using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
 
-namespace Code
+namespace Code.Catalog
 {
     public class CatalogManager : MonoBehaviour
     {
-        [SerializeField] private CurrencyStoreElement _gold;
-        [SerializeField] private CurrencyStoreElement _experience;
-        [SerializeField] private Transform _content;
-        [SerializeField] private ItemStoreElement _item;
+        private CurrencyStoreElement _gold;
+        private CurrencyStoreElement _experience;
+        private Transform _content;
+        private ItemStoreElement _item;
+
         private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
         private List<ItemStoreElement> _itemStoreElements;
 
-        private void Start()
+        public void CreatCatalog(CurrencyStoreElement gold, CurrencyStoreElement experience, Transform content,
+            ItemStoreElement item)
         {
-            PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess, OnFailure);
+            _gold = gold;
+            _experience = experience;
+            _content = content;
+            _item = item;
             _itemStoreElements = new List<ItemStoreElement>();
+
+            PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess, OnFailure);
             UpdateCurrencyElement();
         }
 
@@ -52,10 +59,7 @@ namespace Code
                         Price = (int) catalogItem.VirtualCurrencyPrices["GD"],
                         VirtualCurrency = "GD"
                     },
-                    success =>
-                    {
-                        UpdateCurrencyElement();
-                    },
+                    success => { UpdateCurrencyElement(); },
                     error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
             }
         }
@@ -90,7 +94,7 @@ namespace Code
             }
         }
 
-        private void OnDestroy()
+        public void OnDestroy()
         {
             for (int i = 0; i < _itemStoreElements.Count; i++)
             {

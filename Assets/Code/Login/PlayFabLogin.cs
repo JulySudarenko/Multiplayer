@@ -4,7 +4,7 @@ using PlayFab.ClientModels;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Code
+namespace Code.Login
 {
     public class PlayFabLogin : IDisposable
     {
@@ -25,7 +25,7 @@ namespace Code
             _authorizationMenu.RegistrationButton.onClick.AddListener(CreateAccount);
             _authorizationMenu.CustomIdButton.onClick.AddListener(Login);
         }
-        
+
         private void ActivateMenu()
         {
             _isIdExist = PlayerPrefs.HasKey(AuthKey);
@@ -40,7 +40,7 @@ namespace Code
                 _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Default, "Please, registry");
             }
         }
-        
+
         private void CreateAccount()
         {
             _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection...");
@@ -52,7 +52,8 @@ namespace Code
                     RequireBothUsernameAndEmail = true
                 }, result =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success, $"Success: {_authorizationMenu.UserName}");
+                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+                        $"Success: {_authorizationMenu.UserName}");
                     Debug.Log($"Success: {_authorizationMenu.UserName}");
                     _isIdExist = PlayerPrefs.HasKey(AuthKey);
                     _guid = PlayerPrefs.GetString(AuthKey, Guid.NewGuid().ToString());
@@ -60,7 +61,8 @@ namespace Code
                 },
                 error =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail, $"Fail: {error.ErrorMessage}");
+                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
+                        $"Fail: {error.ErrorMessage}");
                     Debug.LogError($"Fail: {error.ErrorMessage}");
                 });
         }
@@ -74,21 +76,23 @@ namespace Code
                     Password = _authorizationMenu.UserPassword
                 }, result =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success, $"Success: {_authorizationMenu.UserName}");
+                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+                        $"Success: {_authorizationMenu.UserName}");
                     Debug.Log($"Success: {_authorizationMenu.UserName}");
                     SceneManager.LoadScene("Profile");
                 },
                 error =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail, $"Fail: {error.ErrorMessage}");
+                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
+                        $"Fail: {error.ErrorMessage}");
                     Debug.LogError($"Fail: {error.ErrorMessage}");
                 });
         }
-        
+
         private void Login()
         {
-             _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection... ");
-             
+            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection... ");
+
             if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId))
             {
                 PlayFabSettings.staticSettings.TitleId = "2402C";
@@ -101,7 +105,8 @@ namespace Code
 
         private void OnLoginSuccess(LoginResult loginResult)
         {
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success, $"Connection successful. ID = {_guid}");
+            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+                $"Connection successful. ID = {_guid}");
             Debug.Log($"Congratulations, you made successful API call! ID = {_guid}");
             PlayerPrefs.SetString(AuthKey, _guid);
             _isIdExist = PlayerPrefs.HasKey(AuthKey);
@@ -111,15 +116,18 @@ namespace Code
         private void OnLoginFailure(PlayFabError error)
         {
             var errorMessage = error.GenerateErrorReport();
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail, "Something went wrong: {errorMessage}");
+            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
+                "Something went wrong: {errorMessage}");
             Debug.LogError($"Something went wrong: {errorMessage}");
         }
 
         private void DeleteAccount()
         {
             PlayerPrefs.DeleteKey(AuthKey);
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success, "Account was deleted. Please, registry."); }
-        
+            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+                "Account was deleted. Please, registry.");
+        }
+
         public void Dispose()
         {
             _authorizationMenu.Dispose(_isIdExist);

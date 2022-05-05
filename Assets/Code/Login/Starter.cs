@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code
+namespace Code.Login
 {
     public class Starter : MonoBehaviour
     {

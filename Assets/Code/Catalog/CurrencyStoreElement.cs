@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Code
+namespace Code.Catalog
 {
     public class CurrencyStoreElement : MonoBehaviour
     {

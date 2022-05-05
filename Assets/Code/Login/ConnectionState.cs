@@ -1,4 +1,4 @@
-﻿namespace Code
+﻿namespace Code.Login
 {
     public enum ConnectionState
     {
