@@ -8,9 +8,6 @@ namespace Code.GameRooms
     {
         private string _roomName;
 
-        //[SerializeField] private GameObject _playerList;
-
-        //[SerializeField] private GameObject _createRoomPanel;
         [SerializeField] private PlayersElement _element;
         [SerializeField] private InputField _roomNameInputField;
         [SerializeField] private Button _createButton;
@@ -61,7 +58,7 @@ namespace Code.GameRooms
         public override void OnJoinedRoom()
         {
             _startButton.gameObject.SetActive(true);
-            //_playerList.SetActive(true);
+
             foreach (var p in PhotonNetwork.PlayerList)
             {
                 var newElement = Instantiate(_element, _element.transform.parent);
