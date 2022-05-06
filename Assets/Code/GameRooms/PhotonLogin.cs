@@ -40,12 +40,12 @@ namespace Code.GameRooms
             }
         }
 
-        public void UpdateRoomName(string roomName)
+        private void UpdateRoomName(string roomName)
         {
             _roomName = roomName;
         }
 
-        public void OnCreateRoomButtonClicked()
+        private void OnCreateRoomButtonClicked()
         {
             PhotonNetwork.CreateRoom(_roomName);
         }
@@ -68,7 +68,7 @@ namespace Code.GameRooms
             }
         }
 
-        public void OnStartGameButtonClicked()
+        private void OnStartGameButtonClicked()
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
