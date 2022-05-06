@@ -33,7 +33,6 @@ namespace Code.GameRooms
             if (PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.JoinRandomRoom();
-                Debug.Log($"Connected!!! {PhotonNetwork.AuthValues}");
             }
             else
             {
@@ -74,8 +73,7 @@ namespace Code.GameRooms
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            Debug.Log("GameStart");
-            //PhotonNetwork.LoadLevel("TestGameLevel");
+            PhotonNetwork.LoadLevel("DemoAsteroids-GameScene");
         }
 
         public void OnDestroy()
