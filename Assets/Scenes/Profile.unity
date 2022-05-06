@@ -6155,7 +6155,7 @@ PrefabInstance:
     - target: {fileID: 9197320492195048775, guid: 0ec38cb435b2606448e084272d4ec621,
         type: 3}
       propertyPath: m_Text
-      value: PRIVATE  ROOM
+      value: ADD PRIVATE
       objectReference: {fileID: 0}
     - target: {fileID: 9197320492195048775, guid: 0ec38cb435b2606448e084272d4ec621,
         type: 3}

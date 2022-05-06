@@ -967,8 +967,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8280b377e5046ba8ccc169c69e0914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _connectButton: {fileID: 587477325}
-  _disconnectButton: {fileID: 1322281345}
+  _roomsJoinedPanel: {fileID: 0}
+  _element: {fileID: 0}
+  _roomNameInputField: {fileID: 0}
+  _createButton: {fileID: 0}
+  _startButton: {fileID: 0}
 --- !u!114 &714634933
 MonoBehaviour:
   m_ObjectHideFlags: 0
