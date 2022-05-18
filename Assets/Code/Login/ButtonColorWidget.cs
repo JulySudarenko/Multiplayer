@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code
+namespace Code.Login
 {
     public class ButtonColorWidget : MonoBehaviour
     {

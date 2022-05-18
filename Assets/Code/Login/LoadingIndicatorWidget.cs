@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace Code
+namespace Code.Login
 {
     public class LoadingIndicatorWidget : MonoBehaviour
     {

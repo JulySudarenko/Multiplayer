@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/CatalogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/CatalogManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../!Архив/gb0122-lesson6/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -50,6 +51,21 @@
         <option value="$PROJECT_DIR$/Assets/Code/PlayFabLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/CatalogManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/ItemStoreElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/CurrencyStoreElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/AuthorizationMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/ButtonColorWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/ConnectionState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/LoadingIndicatorWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/Starter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/QuickMatchExample.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/PhotonLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/SetRoomOpenedButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayersElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
       </list>
     </option>
   </component>
@@ -69,6 +85,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../!SaveBuild/MultiPlayerV1\Multiplayer.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\geekbrains.ru\Projects\Unity\!SaveBuild\MultiPlayerV1" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -178,32 +202,13 @@
       <screen x="1920" y="-154" width="1536" height="832" />
     </state>
     <state width="1478" height="279" key="GridCell.Tab.3.right/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651071425361" />
-    <state x="2433" y="-36" key="RiderGenerateDialog" timestamp="1651047301356">
+    <state x="2433" y="-36" key="RiderGenerateDialog" timestamp="1651663474088">
       <screen x="1920" y="-154" width="1536" height="832" />
     </state>
-    <state x="2433" y="-36" key="RiderGenerateDialog/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651047301356" />
+    <state x="2433" y="-36" key="RiderGenerateDialog/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651663474088" />
     <state x="2351" y="-1" width="672" height="678" key="search.everywhere.popup" timestamp="1651069316832">
       <screen x="1920" y="-154" width="1536" height="832" />
     </state>
     <state x="2351" y="-1" width="672" height="678" key="search.everywhere.popup/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651069316832" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Code/AuthorizationMenu.cs</url>
-          <line>46</line>
-          <properties documentPath="D:\geekbrains.ru\Projects\Unity\Multiplayer\Assets\Code\AuthorizationMenu.cs" initialLine="30">
-            <startOffsets>
-              <option value="1834" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1870" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
