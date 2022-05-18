@@ -611,6 +611,14 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="WizardPolyArt" t="Include">
+          <e p="Shader" t="Include">
+            <e p="PolyArtMaskTint.shader" t="Include" />
+          </e>
+          <e p="SRP" t="Include">
+            <e p="HowToTestSRPs.txt" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Multiplayer.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
