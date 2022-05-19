@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
@@ -110,6 +111,11 @@ namespace Code.Login
             Debug.Log($"Congratulations, you made successful API call! ID = {_guid}");
             PlayerPrefs.SetString(AuthKey, _guid);
             _isIdExist = PlayerPrefs.HasKey(AuthKey);
+            Debug.Log("Congratulations, you made your first successful API call!");
+            SetUserData();
+            GetUserData(loginResult.PlayFabId);
+
+            
             SceneManager.LoadScene("Profile");
         }
 
@@ -128,6 +134,37 @@ namespace Code.Login
                 "Account was deleted. Please, registry.");
         }
 
+        private void SetUserData() {
+            PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest() {
+                    Data = new Dictionary<string, string>() {
+                        {"Ancestor", "Arthur"},
+                        {"Successor", "Fred"}
+                    }
+                },
+                result => Debug.Log("Successfully updated user data"),
+                error => {
+                    Debug.Log("Got error setting user data Ancestor to Arthur");
+                    Debug.Log(error.GenerateErrorReport());
+                });
+        }
+        private void GetUserData(string myPlayFabId) 
+        {
+            PlayFabClientAPI.GetUserData(new GetUserDataRequest() 
+            {
+                PlayFabId = myPlayFabId,
+                Keys = null
+            }, result => {
+                Debug.Log("Got user data:");
+                if (result.Data == null || !result.Data.ContainsKey("Ancestor"))
+                    Debug.Log("No Ancestor");
+                else Debug.Log("Ancestor: "+result.Data["Ancestor"].Value);
+            }, error => {
+                Debug.Log("Got error retrieving user data:");
+                Debug.Log(error.GenerateErrorReport());
+            });
+        }
+
+        
         public void Dispose()
         {
             _authorizationMenu.Dispose(_isIdExist);

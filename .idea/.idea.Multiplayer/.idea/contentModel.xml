@@ -13,6 +13,11 @@
             <e p="ItemStoreElement.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
           </e>
+          <e p="Game" t="Include">
+            <e p="CharacterAnimatorManager.cs" t="Include" />
+            <e p="CharacterManager.cs" t="Include" />
+            <e p="CharacterMovement.cs" t="Include" />
+          </e>
           <e p="GameRooms" t="Include">
             <e p="JoinRoomButton.cs" t="Include" />
             <e p="PhotonLogin.cs" t="Include" />
@@ -614,9 +619,6 @@
         <e p="WizardPolyArt" t="Include">
           <e p="Shader" t="Include">
             <e p="PolyArtMaskTint.shader" t="Include" />
-          </e>
-          <e p="SRP" t="Include">
-            <e p="HowToTestSRPs.txt" t="Include" />
           </e>
         </e>
       </e>

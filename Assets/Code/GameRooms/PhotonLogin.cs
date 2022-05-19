@@ -1,4 +1,6 @@
-﻿using Photon.Pun;
+﻿using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +10,8 @@ namespace Code.GameRooms
     {
         private string _roomName;
         [SerializeField] private GameObject _roomsJoinedPanel;
+        [SerializeField] private GameObject _playerList;
+        [SerializeField] private GameObject _playerNamePanel;
         [SerializeField] private PlayersElement _element;
         [SerializeField] private InputField _roomNameInputField;
         [SerializeField] private Button _createButton;
@@ -30,16 +34,18 @@ namespace Code.GameRooms
 
         private void Connect()
         {
-            if (PhotonNetwork.IsConnected)
-            {
-                PhotonNetwork.JoinRandomRoom();
-            }
-            else
+            if (!PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.ConnectUsingSettings();
             }
         }
 
+        public override void OnConnectedToMaster()
+        {
+            base.OnConnectedToMaster();
+            PhotonNetwork.JoinRandomRoom();
+        }
+        
         private void UpdateRoomName(string roomName)
         {
             _roomName = roomName;
@@ -57,6 +63,7 @@ namespace Code.GameRooms
 
         public override void OnJoinedRoom()
         {
+            base.OnJoinedRoom();
             _roomsJoinedPanel.SetActive(false);
             _startButton.gameObject.SetActive(true);
 
@@ -73,9 +80,23 @@ namespace Code.GameRooms
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            PhotonNetwork.LoadLevel("DemoAsteroids-GameScene");
+            PhotonNetwork.LoadLevel("GameForest");
         }
 
+        public override void OnRoomListUpdate(List<RoomInfo> roomList)
+        {
+            _createButton.gameObject.SetActive(false);
+            _roomNameInputField.gameObject.SetActive(false);
+            _roomsJoinedPanel.gameObject.SetActive(false);
+            _playerList.SetActive(true);
+            foreach (var p in roomList)
+            {
+                var newElement = Instantiate(_element, _element.transform.parent);
+                newElement.gameObject.SetActive(true);
+                newElement.SetName(p.Name);
+            }
+        }
+        
         public void OnDestroy()
         {
             _roomNameInputField.onEndEdit.RemoveListener(UpdateRoomName);
@@ -83,4 +104,5 @@ namespace Code.GameRooms
             _startButton.onClick.RemoveListener(OnStartGameButtonClicked);
         }
     }
+
 }

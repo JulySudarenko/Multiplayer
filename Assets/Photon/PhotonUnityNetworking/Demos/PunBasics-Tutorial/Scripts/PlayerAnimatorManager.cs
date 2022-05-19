@@ -18,7 +18,7 @@ namespace Photon.Pun.Demo.PunBasics
 
         [SerializeField]
 	    private float directionDampTime = 0.25f;
-        Animator animator;
+	    Animator animator;
 
 		#endregion
 
@@ -57,22 +57,22 @@ namespace Photon.Pun.Demo.PunBasics
             if (stateInfo.IsName("Base Layer.Run"))
             {
 				// When using trigger parameter
-                if (Input.GetButtonDown("Fire2")) animator.SetTrigger("Jump"); 
+                if (Input.GetButtonDown("Jump")) animator.SetTrigger("Jump"); 
 			}
            
 			// deal with movement
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
 			// prevent negative Speed.
-            if( v < 0 )
+            if( vertical < 0 )
             {
-                v = 0;
+                vertical = 0;
             }
 
 			// set the Animator Parameters
-            animator.SetFloat( "Speed", h*h+v*v );
-            animator.SetFloat( "Direction", h, directionDampTime, Time.deltaTime );
+            animator.SetFloat( "Speed", horizontal*horizontal+vertical*vertical );
+            animator.SetFloat( "Direction", horizontal, directionDampTime, Time.deltaTime );
 	    }
 
 		#endregion

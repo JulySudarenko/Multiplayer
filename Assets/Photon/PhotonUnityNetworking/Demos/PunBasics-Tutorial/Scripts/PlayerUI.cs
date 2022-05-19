@@ -104,9 +104,7 @@ namespace Photon.Pun.Demo.PunBasics
 			}
 
 		}
-
-
-
+		
 
 		#endregion
 

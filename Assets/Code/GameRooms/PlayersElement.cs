@@ -12,5 +12,10 @@ namespace Code.GameRooms
         {
             _roomName.text = room.UserId;
         }
+
+        public void SetName(string name)
+        {
+            _roomName.text = name;
+        }
     }
 }
