@@ -932,7 +932,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 714634931}
-  - component: {fileID: 714634932}
   - component: {fileID: 714634933}
   m_Layer: 0
   m_Name: Initiatizator
@@ -955,23 +954,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &714634932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714634930}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8280b377e5046ba8ccc169c69e0914a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _roomsJoinedPanel: {fileID: 0}
-  _element: {fileID: 0}
-  _roomNameInputField: {fileID: 0}
-  _createButton: {fileID: 0}
-  _startButton: {fileID: 0}
 --- !u!114 &714634933
 MonoBehaviour:
   m_ObjectHideFlags: 0

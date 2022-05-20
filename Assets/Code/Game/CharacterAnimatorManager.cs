@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using UnityEngine;
 
+
 namespace Code.Game
 {
     internal class CharacterAnimatorManager : MonoBehaviourPun
@@ -39,14 +40,5 @@ namespace Code.Game
 
             _animator.SetFloat(Names.SPEED, horizontal * horizontal + vertical * vertical);
         }
-    }
-
-    public static class Names
-    {
-        public const string SPEED = "Speed";
-        public const string JUMP = "Jump";
-        public const string ATTACK = "Attack";
-        public const string HORIZONTAL = "Horizontal";
-        public const string VERTICAL = "Vertical";
     }
 }

@@ -1,5 +1,8 @@
-﻿using Photon.Pun;
+﻿using System;
+using Photon.Pun;
 using Photon.Pun.Demo.PunBasics;
+using PlayFab;
+using PlayFab.ClientModels;
 using UnityEngine;
 
 
@@ -7,12 +10,10 @@ namespace Code.Game
 {
     internal class CharacterManager : MonoBehaviourPun, IPunObservable
     {
-        [SerializeField] private float _health = 1.0f;
-        [SerializeField] private GameObject _healthUI;
+        [SerializeField] private float _health;
+        [SerializeField] private PlayerUI _healthUI;
         [SerializeField] private GameObject _magicalRay;
 
-        private CharacterMovement _movement;
-        private CharacterAttack _attack;
         private bool _isFiring;
         
         private void Awake()
@@ -25,13 +26,8 @@ namespace Code.Game
             {
                 _magicalRay.SetActive(false);
             }
-            
-            // var source = GetComponent<AudioSource>();
-            // var animator = GetComponent<Animator>();
-            // var rigidbody = GetComponent<Rigidbody>();
-            //
-            // _movement = new CharacterMovement(rigidbody, this.transform, animator, source);
-            // _attack = new CharacterAttack();
+
+            GetUserData();
         }
 
         private void Start()
@@ -48,18 +44,38 @@ namespace Code.Game
             {
                 Debug.LogError("Missing CameraWork Component on playerPrefab.", this);
             }
+            
+            
         }
-
+        private void GetUserData() 
+        {
+            PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result => {
+                Debug.Log("Got user data:");
+                if (result.Data == null || !result.Data.ContainsKey("Health"))
+                    Debug.Log("No params health");
+                else
+                {
+                    _health = Convert.ToSingle(result.Data["Health"].Value);
+                    Debug.Log("Health: " + result.Data["Health"].Value);
+                }
+            }, error => {
+                Debug.Log("Got error retrieving user data:");
+                Debug.Log(error.GenerateErrorReport());
+            });
+        }
         private void Update()
         {
             if (photonView.IsMine)
             {
                 ProcessInputs();
-                //_movement.Update();
             }
-            
         }
 
+        public void UpdatePlayerCharacteristics(float health)
+        {
+            _health = health;
+        }
+        
         private void ProcessInputs()
         {
             if (Input.GetButtonDown("Attack"))
@@ -94,8 +110,4 @@ namespace Code.Game
         }
     }
 
-    internal class CharacterAttack
-    {
-        
-    }
 }

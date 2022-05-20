@@ -15,7 +15,7 @@ namespace Code.Catalog
         private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
         private List<ItemStoreElement> _itemStoreElements;
 
-        public void CreatCatalog(CurrencyStoreElement gold, CurrencyStoreElement experience, Transform content,
+        public void CreateCatalog(CurrencyStoreElement gold, CurrencyStoreElement experience, Transform content,
             ItemStoreElement item)
         {
             _gold = gold;
