@@ -21,6 +21,8 @@
           <e p="GameRooms" t="Include">
             <e p="JoinRoomButton.cs" t="Include" />
             <e p="PhotonLogin.cs" t="Include" />
+            <e p="PlayerNamePanel.cs" t="Include" />
+            <e p="PlayerNamePanelView.cs" t="Include" />
             <e p="PlayersElement.cs" t="Include" />
             <e p="PrivateRoomButton.cs" t="Include" />
             <e p="RoomsList.cs" t="Include" />

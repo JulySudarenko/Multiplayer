@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,23 +9,32 @@ namespace Code.GameRooms
 {
     public class PhotonLogin : MonoBehaviourPunCallbacks
     {
-        private string _roomName;
         [SerializeField] private GameObject _roomsJoinedPanel;
         [SerializeField] private GameObject _playerList;
-        [SerializeField] private GameObject _playerNamePanel;
+        [SerializeField] private PlayerNamePanelView _playerNamePanelView;
         [SerializeField] private PlayersElement _element;
         [SerializeField] private InputField _roomNameInputField;
         [SerializeField] private Button _createButton;
         [SerializeField] private Button _startButton;
+        [SerializeField] private Button _changePlayerNameButton;
+        [SerializeField] private TMP_Text _playerNameText;
 
+        private PlayerNamePanel _playerNamePanel;
+        private string _roomName;
+        
+        private Dictionary<string, PlayersElement> _roomPlayers = new Dictionary<string, PlayersElement>();
+        
         private void Awake()
         {
             PhotonNetwork.AutomaticallySyncScene = true;
             _roomNameInputField.onEndEdit.AddListener(UpdateRoomName);
             _createButton.onClick.AddListener(OnCreateRoomButtonClicked);
             _startButton.onClick.AddListener(OnStartGameButtonClicked);
+            _changePlayerNameButton.onClick.AddListener(OpenChangePlayerNamePanel);
             _startButton.gameObject.SetActive(false);
             _roomsJoinedPanel.SetActive(true);
+            
+            _playerNamePanel = new PlayerNamePanel(_playerNamePanelView, _playerNameText);
         }
 
         private void Start()
@@ -40,6 +50,11 @@ namespace Code.GameRooms
             }
         }
 
+        private void OpenChangePlayerNamePanel()
+        {
+             _playerNamePanel.ActivatePanel();
+        }
+        
         public override void OnConnectedToMaster()
         {
             base.OnConnectedToMaster();
@@ -75,6 +90,30 @@ namespace Code.GameRooms
             }
         }
 
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            base.OnPlayerEnteredRoom(newPlayer);
+
+            if (!_roomPlayers.ContainsKey(newPlayer.NickName))
+            {
+                var playerItem = Instantiate(_element, _element.transform.parent);
+                playerItem.SetName(newPlayer.NickName);
+                _roomPlayers.Add(newPlayer.NickName, playerItem);
+            }
+        }
+
+        public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            base.OnPlayerLeftRoom(otherPlayer);
+
+            var nickName = otherPlayer.NickName;
+            if (_roomPlayers.ContainsKey(nickName))
+            {
+                Destroy(_roomPlayers[nickName].gameObject);
+                _roomPlayers.Remove(nickName);
+            }
+        }
+        
         private void OnStartGameButtonClicked()
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
@@ -102,7 +141,7 @@ namespace Code.GameRooms
             _roomNameInputField.onEndEdit.RemoveListener(UpdateRoomName);
             _createButton.onClick.RemoveListener(OnCreateRoomButtonClicked);
             _startButton.onClick.RemoveListener(OnStartGameButtonClicked);
+            _changePlayerNameButton.onClick.RemoveListener(OpenChangePlayerNamePanel);
         }
     }
-
 }

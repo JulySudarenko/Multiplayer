@@ -44,8 +44,6 @@ namespace Code.Game
             {
                 Debug.LogError("Missing CameraWork Component on playerPrefab.", this);
             }
-            
-            
         }
         private void GetUserData() 
         {

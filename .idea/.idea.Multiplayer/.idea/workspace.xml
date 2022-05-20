@@ -22,14 +22,10 @@
     <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterAnimatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterAnimatorManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +72,14 @@
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterAnimatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanelView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
       </list>
     </option>
   </component>
