@@ -68,11 +68,6 @@ namespace Code.Game
                 ProcessInputs();
             }
         }
-
-        public void UpdatePlayerCharacteristics(float health)
-        {
-            _health = health;
-        }
         
         private void ProcessInputs()
         {
@@ -107,5 +102,4 @@ namespace Code.Game
             }
         }
     }
-
 }

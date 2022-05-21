@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 1508282736273805326}
   - component: {fileID: 1508282736791468489}
   m_Layer: 0
-  m_Name: My Robot Kyle -done-
+  m_Name: MyRobotKyle
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,7 +736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508282736280600474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.329, y: 1.534, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1508282736280626064}
@@ -848,7 +848,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &1508282736273868006
 MonoBehaviour:
@@ -895,7 +895,7 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: Hi
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  _healthUI: {fileID: 170056, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
+  _healthUI: {fileID: 11454546, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
   _magicalRay: {fileID: 1508282736280395826}
 --- !u!1 &1508282736280600476
 GameObject:
