@@ -23,8 +23,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MyRobotKyle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MyRobotKyle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot Kyle -done-.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot Kyle -done-.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotKyle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotKyle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
@@ -38,6 +39,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../!Архив/gb0122-lesson6/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Game/CharacterView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FAA55637-FCC1-4BBF-B146-E6835A4641D9/60/72a5dd22/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -69,7 +72,6 @@
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayersElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/RoomsList.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/PlayerAnimatorManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterMovement.cs" />
@@ -81,8 +83,10 @@
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Lobby/LobbyLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" />
       </list>
     </option>
   </component>
@@ -223,6 +227,10 @@
       <screen x="1920" y="-154" width="1536" height="832" />
     </state>
     <state x="2433" y="-36" key="RiderGenerateDialog/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651663474088" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1653224201093">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/1920.-154.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1653224201093" />
     <state x="2351" y="-1" width="672" height="678" key="search.everywhere.popup" timestamp="1651069316832">
       <screen x="1920" y="-154" width="1536" height="832" />
     </state>

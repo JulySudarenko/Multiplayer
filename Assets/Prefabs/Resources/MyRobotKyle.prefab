@@ -811,10 +811,11 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 0
+  observableSearch: 2
   ObservedComponents:
   - {fileID: 1508282736274016878}
   - {fileID: 1508282736273805326}
+  - {fileID: 1508282736791468489}
   sceneViewId: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
@@ -911,8 +912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21c4310e31643abb7b16feea5eddde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 1
-  _healthUI: {fileID: 11454546, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
+  _healthView: {fileID: 4277284125371970473, guid: 5573eadd48b5b2e498e4ae54c072e7c8,
+    type: 3}
   _magicalRay: {fileID: 1508282736280395826}
 --- !u!1 &1508282736280600476
 GameObject:

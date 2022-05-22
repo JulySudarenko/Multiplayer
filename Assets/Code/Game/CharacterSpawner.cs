@@ -11,10 +11,7 @@ namespace Code.Game
         private void Start()
         {
             var number = PhotonNetwork.LocalPlayer.ActorNumber;
-            Debug.Log(number);
-            // Debug.Log(transform.GetChild(Mathf.Abs(number)).position);
-            // Почему присваивает -1, если сразу загрузить эту сцену?
-            PhotonNetwork.Instantiate(_playerPrefab.name, transform.GetChild(Mathf.Abs(number)).position, Quaternion.identity);
+            PhotonNetwork.Instantiate(_playerPrefab.name, transform.GetChild(number).position, Quaternion.identity);
         }
     }
 }
