@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.GameRooms
+namespace Code.View
 {
     internal class PlayerNamePanelView : MonoBehaviour
     {

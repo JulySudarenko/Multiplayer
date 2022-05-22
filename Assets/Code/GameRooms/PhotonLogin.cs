@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.View;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -12,7 +13,7 @@ namespace Code.GameRooms
         [SerializeField] private GameObject _roomsJoinedPanel;
         [SerializeField] private GameObject _playerList;
         [SerializeField] private PlayerNamePanelView _playerNamePanelView;
-        [SerializeField] private PlayersElement _element;
+        [SerializeField] private TextElementView _element;
         [SerializeField] private InputField _roomNameInputField;
         [SerializeField] private Button _createButton;
         [SerializeField] private Button _startButton;
@@ -22,7 +23,7 @@ namespace Code.GameRooms
         private PlayerNamePanel _playerNamePanel;
         private string _roomName;
         
-        private Dictionary<string, PlayersElement> _roomPlayers = new Dictionary<string, PlayersElement>();
+        private Dictionary<string, TextElementView> _roomPlayers = new Dictionary<string, TextElementView>();
         
         private void Awake()
         {
@@ -35,6 +36,7 @@ namespace Code.GameRooms
             _roomsJoinedPanel.SetActive(true);
             
             _playerNamePanel = new PlayerNamePanel(_playerNamePanelView, _playerNameText);
+            _playerNamePanel.ActivatePanel();
         }
 
         private void Start()
@@ -86,7 +88,7 @@ namespace Code.GameRooms
             {
                 var newElement = Instantiate(_element, _element.transform.parent);
                 newElement.gameObject.SetActive(true);
-                newElement.SetRoom(p);
+                newElement.ShowRoom(p);
             }
         }
 
@@ -97,7 +99,7 @@ namespace Code.GameRooms
             if (!_roomPlayers.ContainsKey(newPlayer.NickName))
             {
                 var playerItem = Instantiate(_element, _element.transform.parent);
-                playerItem.SetName(newPlayer.NickName);
+                playerItem.ShowName(newPlayer.NickName);
                 _roomPlayers.Add(newPlayer.NickName, playerItem);
             }
         }
@@ -132,7 +134,7 @@ namespace Code.GameRooms
             {
                 var newElement = Instantiate(_element, _element.transform.parent);
                 newElement.gameObject.SetActive(true);
-                newElement.SetName(p.Name);
+                newElement.ShowName(p.Name);
             }
         }
         

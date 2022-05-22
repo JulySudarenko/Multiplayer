@@ -9,9 +9,9 @@
         <e p="Code" t="Include">
           <e p="Catalog" t="Include">
             <e p="CatalogManager.cs" t="Include" />
-            <e p="CurrencyStoreElement.cs" t="Include" />
-            <e p="ItemStoreElement.cs" t="Include" />
+            <e p="Inventory.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
+            <e p="Shop.cs" t="Include" />
           </e>
           <e p="Game" t="Include">
             <e p="CharacterAnimatorManager.cs" t="Include" />
@@ -24,19 +24,22 @@
             <e p="JoinRoomButton.cs" t="Include" />
             <e p="PhotonLogin.cs" t="Include" />
             <e p="PlayerNamePanel.cs" t="Include" />
-            <e p="PlayerNamePanelView.cs" t="Include" />
-            <e p="PlayersElement.cs" t="Include" />
             <e p="PrivateRoomButton.cs" t="Include" />
             <e p="RoomsList.cs" t="Include" />
             <e p="SetRoomOpenedButton.cs" t="Include" />
           </e>
           <e p="Login" t="Include">
             <e p="AuthorizationMenu.cs" t="Include" />
-            <e p="ButtonColorWidget.cs" t="Include" />
             <e p="ConnectionState.cs" t="Include" />
-            <e p="LoadingIndicatorWidget.cs" t="Include" />
             <e p="PlayFabLogin.cs" t="Include" />
             <e p="Starter.cs" t="Include" />
+          </e>
+          <e p="View" t="Include">
+            <e p="ButtonColorView.cs" t="Include" />
+            <e p="ItemStoreElementView.cs" t="Include" />
+            <e p="LoadingIndicatorView.cs" t="Include" />
+            <e p="PlayerNamePanelView.cs" t="Include" />
+            <e p="TextElementView.cs" t="Include" />
           </e>
         </e>
         <e p="Photon" t="Include">

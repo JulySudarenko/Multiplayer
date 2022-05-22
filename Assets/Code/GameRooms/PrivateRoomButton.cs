@@ -32,13 +32,7 @@ namespace Code.GameRooms
                 _getRoomNameButton.interactable = true;
             }
         }
-
-        private void OnDestroy()
-        {
-            _joinRoomButton.onClick.RemoveListener(OnJoinRoomClicked);
-            _getRoomNameButton.onClick.RemoveListener(OnGetRoomNameClicked);
-        }
-
+       
         private void OnJoinRoomClicked()
         {
             if (!_isPrivateRoomIdCreated)
@@ -57,6 +51,12 @@ namespace Code.GameRooms
             var guid = Guid.NewGuid().ToString();
             _roomName.text = guid;
             _isPrivateRoomIdCreated = true;
+        }
+        
+        private void OnDestroy()
+        {
+            _joinRoomButton.onClick.RemoveListener(OnJoinRoomClicked);
+            _getRoomNameButton.onClick.RemoveListener(OnGetRoomNameClicked);
         }
     }
 }

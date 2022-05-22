@@ -22,12 +22,28 @@
     <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot Kyle -done-.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot Kyle -done-.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotKyle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotKyle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CurrencyStoreElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CurrencyStoreElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/ItemStoreElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ItemStoreElementView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/ItemStoreElement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ItemStoreElementView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanelView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/PlayerNamePanelView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanelView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/PlayerNamePanelView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PlayersElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PlayersElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameRooms/PrivateRoomButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameRooms/PrivateRoomButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/ButtonColorWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ButtonColorView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/ButtonColorWidget.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ButtonColorView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/ConnectionState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Login/ConnectionState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/LoadingIndicatorWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/LoadingIndicatorView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/LoadingIndicatorWidget.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/LoadingIndicatorView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/Starter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Login/Starter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Launcher.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Launcher.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Code/PlayfabLogin.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/SDK/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/SDK/ButtonColorWidget.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/SDK/ConnectionState.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/SDK/PlayFabLogin.cs" />
@@ -63,30 +77,41 @@
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/CurrencyStoreElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/AuthorizationMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/ButtonColorWidget.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Login/ConnectionState.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/LoadingIndicatorWidget.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/Starter.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/QuickMatchExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/SetRoomOpenedButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayersElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/RoomsList.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/PlayerAnimatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterAnimatorManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanelView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Lobby/LobbyLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PrivateRoomButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Login/ConnectionState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayersElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/TextElementView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/PlayerNamePanelView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/LoadingIndicatorView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/ItemStoreElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/ItemStoreElementView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/CurrencyStoreElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/ButtonColorWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/ButtonColorView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/PlayersElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/View/CurrencyStoreElementView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" />
       </list>
     </option>
   </component>
@@ -223,9 +248,10 @@
       <screen x="1920" y="-154" width="1536" height="832" />
     </state>
     <state width="1493" height="278" key="GridCell.Tab.3.right/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1652973433163" />
-    <state x="2433" y="-36" key="RiderGenerateDialog" timestamp="1651663474088">
-      <screen x="1920" y="-154" width="1536" height="832" />
+    <state x="641" y="148" key="RiderGenerateDialog" timestamp="1653243666349">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="641" y="148" key="RiderGenerateDialog/1920.-154.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1653243666349" />
     <state x="2433" y="-36" key="RiderGenerateDialog/1920.-154.1536.832/0.0.1920.1040@1920.-154.1536.832" timestamp="1651663474088" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1653224201093">
       <screen x="0" y="0" width="1920" height="1040" />

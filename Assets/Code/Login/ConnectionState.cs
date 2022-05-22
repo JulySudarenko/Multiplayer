@@ -7,6 +7,4 @@
         Fail = 2,
         Waiting = 3
     }
-    
-    
 }

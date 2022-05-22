@@ -1,17 +1,19 @@
-﻿using UnityEngine;
+﻿using Code.View;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Login
 {
     public class Starter : MonoBehaviour
     {
         [SerializeField] private AuthorizationMenu _authorizationMenu;
-        [SerializeField] private LoadingIndicatorWidget _loadingIndicatorWidget;
+        [FormerlySerializedAs("_loadingIndicatorWidget")] [SerializeField] private LoadingIndicatorView _loadingIndicatorView;
 
         private PlayFabLogin _playFabLogin;
 
         private void Awake()
         {
-            _playFabLogin = new PlayFabLogin(_authorizationMenu, _loadingIndicatorWidget);
+            _playFabLogin = new PlayFabLogin(_authorizationMenu, _loadingIndicatorView);
         }
     }
 }

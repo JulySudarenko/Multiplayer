@@ -1,67 +1,25 @@
 ﻿using System.Collections.Generic;
+using Code.View;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
 
 namespace Code.Catalog
 {
-    public class CatalogManager : MonoBehaviour
+    public class CatalogManager
     {
-        private CurrencyStoreElement _gold;
-        private CurrencyStoreElement _experience;
-        private Transform _content;
-        private ItemStoreElement _item;
+        private readonly Shop _shop;
 
         private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
-        private List<ItemStoreElement> _itemStoreElements;
 
-        public void CreateCatalog(CurrencyStoreElement gold, CurrencyStoreElement experience, Transform content,
-            ItemStoreElement item)
+
+        public CatalogManager(TextElementView gold, TextElementView experience, Transform shop,
+            ItemStoreElementView item, Transform inventory, TextElementView inventoryItem)
         {
-            _gold = gold;
-            _experience = experience;
-            _content = content;
-            _item = item;
-            _itemStoreElements = new List<ItemStoreElement>();
-
+            var inventory1 = new Inventory(inventoryItem, inventory, gold, experience);
+            _shop = new Shop(shop, item, inventory1, _catalog);
             PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess, OnFailure);
-            UpdateCurrencyElement();
-        }
-
-        private void UpdateCurrencyElement()
-        {
-            PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(),
-                success =>
-                {
-                    foreach (KeyValuePair<string, int> kv in success.VirtualCurrency)
-                    {
-                        if (kv.Key == "GD")
-                            _gold.ShowCurrency(kv.Key, kv.Value.ToString());
-                        else if (kv.Key == "EX")
-                            _experience.ShowCurrency(kv.Key, kv.Value.ToString());
-                        else
-                        {
-                            Debug.Log(kv);
-                        }
-                    }
-                },
-                error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
-        }
-
-        private void BuyItem(CatalogItem catalogItem)
-        {
-            if (catalogItem.VirtualCurrencyPrices.ContainsKey("GD"))
-            {
-                PlayFabClientAPI.PurchaseItem(new PurchaseItemRequest
-                    {
-                        CatalogVersion = catalogItem.CatalogVersion,
-                        ItemId = catalogItem.ItemId,
-                        Price = (int) catalogItem.VirtualCurrencyPrices["GD"],
-                        VirtualCurrency = "GD"
-                    },
-                    success => { UpdateCurrencyElement(); },
-                    error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
-            }
+            inventory1.UpdateInventory();
         }
 
         private void OnFailure(PlayFabError error)
@@ -73,6 +31,7 @@ namespace Code.Catalog
         private void OnGetCatalogSuccess(GetCatalogItemsResult result)
         {
             HandleCatalog(result.Catalog);
+            _shop.SetStoreItems();
             Debug.Log($"Catalog was loaded successfully!");
         }
 
@@ -81,24 +40,6 @@ namespace Code.Catalog
             foreach (var item in catalog)
             {
                 _catalog.Add(item.ItemId, item);
-                if (item.VirtualCurrencyPrices.Count > 0)
-                {
-                    var newItem = Instantiate(_item, _content);
-                    newItem.gameObject.SetActive(true);
-                    var cost = (int) item.VirtualCurrencyPrices["GD"];
-                    newItem.ShowItem(item.DisplayName, cost.ToString());
-
-                    newItem.BuyButton.onClick.AddListener(() => BuyItem(item));
-                    _itemStoreElements.Add(newItem);
-                }
-            }
-        }
-
-        public void OnDestroy()
-        {
-            for (int i = 0; i < _itemStoreElements.Count; i++)
-            {
-                _itemStoreElements[i].BuyButton.onClick.RemoveAllListeners();
             }
         }
     }

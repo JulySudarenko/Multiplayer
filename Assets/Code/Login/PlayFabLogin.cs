@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.View;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
@@ -10,16 +11,16 @@ namespace Code.Login
     public class PlayFabLogin : IDisposable
     {
         private readonly AuthorizationMenu _authorizationMenu;
-        private readonly LoadingIndicatorWidget _loadingIndicatorWidget;
+        private readonly LoadingIndicatorView _loadingIndicatorView;
 
         private const string AuthKey = "IdKey";
         private string _guid;
         private bool _isIdExist;
 
-        public PlayFabLogin(AuthorizationMenu authorizationMenu, LoadingIndicatorWidget loadingIndicatorWidget)
+        public PlayFabLogin(AuthorizationMenu authorizationMenu, LoadingIndicatorView loadingIndicatorView)
         {
             _authorizationMenu = authorizationMenu;
-            _loadingIndicatorWidget = loadingIndicatorWidget;
+            _loadingIndicatorView = loadingIndicatorView;
             ActivateMenu();
             _authorizationMenu.DeleteAccountButton.onClick.AddListener(DeleteAccount);
             _authorizationMenu.AuthorizationButton.onClick.AddListener(SignIn);
@@ -33,18 +34,18 @@ namespace Code.Login
             if (_isIdExist)
             {
                 _authorizationMenu.ChosePanel(true);
-                _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Default, "Please, sing up");
+                _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Default, "Please, sing up");
             }
             else
             {
                 _authorizationMenu.ChosePanel(false);
-                _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Default, "Please, registry");
+                _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Default, "Please, registry");
             }
         }
 
         private void CreateAccount()
         {
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection...");
+            _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection...");
             PlayFabClientAPI.RegisterPlayFabUser(new RegisterPlayFabUserRequest
                 {
                     Username = _authorizationMenu.UserName,
@@ -53,7 +54,7 @@ namespace Code.Login
                     RequireBothUsernameAndEmail = true
                 }, result =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+                    _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Success,
                         $"Success: {_authorizationMenu.UserName}");
                     _isIdExist = PlayerPrefs.HasKey(AuthKey);
                     _guid = PlayerPrefs.GetString(AuthKey, Guid.NewGuid().ToString());
@@ -61,34 +62,34 @@ namespace Code.Login
                 },
                 error =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
+                    _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Fail,
                         $"Fail: {error.ErrorMessage}");
                 });
         }
 
         private void SignIn()
         {
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection...");
+            _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection...");
             PlayFabClientAPI.LoginWithPlayFab(new LoginWithPlayFabRequest
                 {
                     Username = _authorizationMenu.UserName,
                     Password = _authorizationMenu.UserPassword
                 }, result =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+                    _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Success,
                         $"Success: {_authorizationMenu.UserName}");
                     SceneManager.LoadScene("Profile");
                 },
                 error =>
                 {
-                    _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
+                    _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Fail,
                         $"Fail: {error.ErrorMessage}");
                 });
         }
 
         private void Login()
         {
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection... ");
+            _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Waiting, "Waiting for connection... ");
 
             if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId))
             {
@@ -101,7 +102,7 @@ namespace Code.Login
 
         private void OnLoginSuccess(LoginResult loginResult)
         {
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+            _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Success,
                 $"Connection successful. ID = {_guid}");
             PlayerPrefs.SetString(AuthKey, _guid);
             _isIdExist = PlayerPrefs.HasKey(AuthKey);
@@ -113,14 +114,14 @@ namespace Code.Login
         private void OnLoginFailure(PlayFabError error)
         {
             var errorMessage = error.GenerateErrorReport();
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
+            _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Fail,
                 "Something went wrong: {errorMessage}");
         }
 
         private void DeleteAccount()
         {
             PlayerPrefs.DeleteKey(AuthKey);
-            _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
+            _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Success,
                 "Account was deleted. Please, registry.");
         }
 
