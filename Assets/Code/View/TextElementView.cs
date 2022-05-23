@@ -7,7 +7,7 @@ namespace Code.View
     public class TextElementView : MonoBehaviour
     {
         [SerializeField] private TMP_Text _text;
-        
+
         public void ShowRoom(Player room)
         {
             _text.text = room.UserId;
@@ -17,7 +17,7 @@ namespace Code.View
         {
             _text.text = name;
         }
-        
+
         public void ShowCurrency(string currency, string amount)
         {
             _text.text = $"{currency} : {amount}";

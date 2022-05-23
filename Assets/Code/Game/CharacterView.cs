@@ -9,7 +9,7 @@ namespace Code.Game
         [SerializeField] private Vector3 _screenOffset = new Vector3(0f, 30f, 0f);
         [SerializeField] private Text _playerNameText;
         [SerializeField] private Slider _playerHealthSlider;
-        private CharacterManager _target;
+        private CharacterController _target;
         private Renderer _targetRenderer;
         private Transform _targetTransform;
         private CanvasGroup _canvasGroup;
@@ -52,7 +52,7 @@ namespace Code.Game
             }
         }
 
-        public void SetTarget(CharacterManager target)
+        public void SetTarget(CharacterController target)
         {
             if (target == null)
             {
@@ -65,7 +65,7 @@ namespace Code.Game
             _targetTransform = target.GetComponent<Transform>();
             _targetRenderer = target.GetComponentInChildren<Renderer>();
 
-            CharacterController _characterController = target.GetComponent<CharacterController>();
+            UnityEngine.CharacterController _characterController = target.GetComponent<UnityEngine.CharacterController>();
 
             if (_characterController != null)
             {

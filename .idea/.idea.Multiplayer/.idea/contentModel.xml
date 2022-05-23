@@ -9,13 +9,14 @@
         <e p="Code" t="Include">
           <e p="Catalog" t="Include">
             <e p="CatalogManager.cs" t="Include" />
-            <e p="Inventory.cs" t="Include" />
+            <e p="CharacterManager.cs" t="Include" />
+            <e p="InventoryLobby.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
-            <e p="Shop.cs" t="Include" />
+            <e p="ShopLobby.cs" t="Include" />
           </e>
           <e p="Game" t="Include">
             <e p="CharacterAnimatorManager.cs" t="Include" />
-            <e p="CharacterManager.cs" t="Include" />
+            <e p="CharacterController.cs" t="Include" />
             <e p="CharacterSpawner.cs" t="Include" />
             <e p="CharacterView.cs" t="Include" />
             <e p="Names.cs" t="Include" />
@@ -37,6 +38,7 @@
           <e p="View" t="Include">
             <e p="ButtonColorView.cs" t="Include" />
             <e p="ItemStoreElementView.cs" t="Include" />
+            <e p="LineElementView.cs" t="Include" />
             <e p="LoadingIndicatorView.cs" t="Include" />
             <e p="PlayerNamePanelView.cs" t="Include" />
             <e p="TextElementView.cs" t="Include" />

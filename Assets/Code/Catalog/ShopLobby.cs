@@ -8,20 +8,20 @@ using Object = UnityEngine.Object;
 
 namespace Code.Catalog
 {
-    public class Shop : IDisposable
+    public class ShopLobby : IDisposable
     {
         private readonly Transform _shop;
         private readonly ItemStoreElementView _item;
         private readonly List<ItemStoreElementView> _itemStoreElements;
         private readonly Dictionary<string, CatalogItem> _catalog;
-        private readonly Inventory _inventory;
+        private readonly InventoryLobby _inventoryLobby;
 
-        public Shop(Transform shop, ItemStoreElementView item, Inventory inventory,
+        public ShopLobby(Transform shop, ItemStoreElementView item, InventoryLobby inventoryLobby,
             Dictionary<string, CatalogItem> catalog)
         {
             _shop = shop;
             _item = item;
-            _inventory = inventory;
+            _inventoryLobby = inventoryLobby;
             _catalog = catalog;
             _itemStoreElements = new List<ItemStoreElementView>();
         }
@@ -60,7 +60,7 @@ namespace Code.Catalog
                         Price = (int) catalogItem.VirtualCurrencyPrices["GD"],
                         VirtualCurrency = "GD"
                     },
-                    success => { _inventory.UpdateInventory(); }, // UpdateInventory(); },
+                    success => { _inventoryLobby.UpdateInventory(); }, // UpdateInventory(); },
                     error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
             }
         }

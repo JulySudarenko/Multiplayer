@@ -3,17 +3,21 @@ using Code.View;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace Code.Catalog
 {
-    public class Inventory
+    public class InventoryLobby
     {
         private readonly TextElementView _inventoryItem;
         private readonly Transform _inventory;
         private readonly TextElementView _gold;
         private readonly TextElementView _experience;
+        private readonly List<TextElementView> _itemList = new List<TextElementView>();
+        private CatalogItem _item;
 
-        public Inventory(TextElementView inventoryItem, Transform inventory, TextElementView gold,
+        public InventoryLobby(TextElementView inventoryItem, Transform inventory, TextElementView gold,
             TextElementView experience)
         {
             _inventoryItem = inventoryItem;
@@ -39,14 +43,22 @@ namespace Code.Catalog
                         }
                     }
 
+                    foreach (var t in _itemList)
+                    {
+                        Object.Destroy(t.gameObject);
+                    }
+                    _itemList.Clear();
+                    
                     foreach (var inv in success.Inventory)
                     {
                         var item = Object.Instantiate(_inventoryItem, _inventory);
                         item.ShowName(inv.DisplayName);
                         item.gameObject.SetActive(true);
+                        _itemList.Add(item);
                     }
                 },
                 error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
         }
+
     }
 }

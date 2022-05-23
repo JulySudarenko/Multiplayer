@@ -8,16 +8,17 @@ namespace Code.Catalog
 {
     public class CatalogManager
     {
-        private readonly Shop _shop;
+        private readonly ShopLobby _shopLobby;
 
         private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
 
+        public Dictionary<string, CatalogItem> Catalog => _catalog;
 
         public CatalogManager(TextElementView gold, TextElementView experience, Transform shop,
             ItemStoreElementView item, Transform inventory, TextElementView inventoryItem)
         {
-            var inventory1 = new Inventory(inventoryItem, inventory, gold, experience);
-            _shop = new Shop(shop, item, inventory1, _catalog);
+            var inventory1 = new InventoryLobby(inventoryItem, inventory, gold, experience);
+            _shopLobby = new ShopLobby(shop, item, inventory1, _catalog);
             PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess, OnFailure);
             inventory1.UpdateInventory();
         }
@@ -31,7 +32,7 @@ namespace Code.Catalog
         private void OnGetCatalogSuccess(GetCatalogItemsResult result)
         {
             HandleCatalog(result.Catalog);
-            _shop.SetStoreItems();
+            _shopLobby.SetStoreItems();
             Debug.Log($"Catalog was loaded successfully!");
         }
 

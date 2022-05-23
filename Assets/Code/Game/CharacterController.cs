@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Code.Game
 {
-    public class CharacterManager : MonoBehaviourPun, IPunObservable
+    public class CharacterController : MonoBehaviourPun, IPunObservable
     {
         public float Health => _health;
 

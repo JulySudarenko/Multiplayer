@@ -11,7 +11,7 @@ namespace Code.Game
         private void Start()
         {
             var number = PhotonNetwork.LocalPlayer.ActorNumber;
-            PhotonNetwork.Instantiate(_playerPrefab.name, transform.GetChild(number).position, Quaternion.identity);
+            PhotonNetwork.Instantiate(_playerPrefab.name, transform.GetChild(Mathf.Abs(number)).position, Quaternion.identity);
         }
     }
 }
