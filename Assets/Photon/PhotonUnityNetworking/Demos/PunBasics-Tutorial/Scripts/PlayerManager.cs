@@ -240,7 +240,7 @@ namespace Photon.Pun.Demo.PunBasics
         /// </summary>
         void ProcessInputs()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Attack"))
             {
                 // we don't want to fire when we interact with UI buttons for example. IsPointerOverGameObject really means IsPointerOver*UI*GameObject
                 // notice we don't use on on GetbuttonUp() few lines down, because one can mouse down, move over a UI element and release, which would lead to not lower the isFiring Flag.
@@ -255,7 +255,7 @@ namespace Photon.Pun.Demo.PunBasics
                 }
             }
 
-            if (Input.GetButtonUp("Fire1"))
+            if (Input.GetButtonUp("Attack"))
             {
                 if (this.IsFiring)
                 {

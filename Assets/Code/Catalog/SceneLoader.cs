@@ -27,7 +27,7 @@ namespace Code.Catalog
             GoToProfile();
             
             _catalogManager = GetComponent<CatalogManager>();
-            _catalogManager.CreatCatalog(_gold, _experience, _itemListSlider, _item);
+            _catalogManager.CreateCatalog(_gold, _experience, _itemListSlider, _item);
         }
 
         private void LoadScene(string scene)

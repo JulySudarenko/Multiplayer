@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
@@ -54,7 +55,6 @@ namespace Code.Login
                 {
                     _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
                         $"Success: {_authorizationMenu.UserName}");
-                    Debug.Log($"Success: {_authorizationMenu.UserName}");
                     _isIdExist = PlayerPrefs.HasKey(AuthKey);
                     _guid = PlayerPrefs.GetString(AuthKey, Guid.NewGuid().ToString());
                     SceneManager.LoadScene("Profile");
@@ -63,7 +63,6 @@ namespace Code.Login
                 {
                     _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
                         $"Fail: {error.ErrorMessage}");
-                    Debug.LogError($"Fail: {error.ErrorMessage}");
                 });
         }
 
@@ -78,14 +77,12 @@ namespace Code.Login
                 {
                     _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
                         $"Success: {_authorizationMenu.UserName}");
-                    Debug.Log($"Success: {_authorizationMenu.UserName}");
                     SceneManager.LoadScene("Profile");
                 },
                 error =>
                 {
                     _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
                         $"Fail: {error.ErrorMessage}");
-                    Debug.LogError($"Fail: {error.ErrorMessage}");
                 });
         }
 
@@ -96,7 +93,6 @@ namespace Code.Login
             if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId))
             {
                 PlayFabSettings.staticSettings.TitleId = "2402C";
-                Debug.Log("Set TitleID");
             }
 
             var request = new LoginWithCustomIDRequest {CustomId = "GeekBrainsLesson3", CreateAccount = _isIdExist};
@@ -107,18 +103,18 @@ namespace Code.Login
         {
             _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
                 $"Connection successful. ID = {_guid}");
-            Debug.Log($"Congratulations, you made successful API call! ID = {_guid}");
             PlayerPrefs.SetString(AuthKey, _guid);
             _isIdExist = PlayerPrefs.HasKey(AuthKey);
+            SetUserData();
+            //GetUserData(loginResult.PlayFabId);
             SceneManager.LoadScene("Profile");
         }
-
+        
         private void OnLoginFailure(PlayFabError error)
         {
             var errorMessage = error.GenerateErrorReport();
             _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Fail,
                 "Something went wrong: {errorMessage}");
-            Debug.LogError($"Something went wrong: {errorMessage}");
         }
 
         private void DeleteAccount()
@@ -127,6 +123,21 @@ namespace Code.Login
             _loadingIndicatorWidget.ShowLoadingStatusInformation(ConnectionState.Success,
                 "Account was deleted. Please, registry.");
         }
+
+        private void SetUserData() {
+            PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest() {
+                    Data = new Dictionary<string, string>() 
+                    {
+                        {"Health", 3.ToString()}
+                    }
+                },
+                result => Debug.Log("Successfully updated user data"),
+                error => {
+                    Debug.Log("Got error setting user data Ancestor to Arthur");
+                    Debug.Log(error.GenerateErrorReport());
+                });
+        }
+        
 
         public void Dispose()
         {
