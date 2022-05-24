@@ -9,7 +9,7 @@
         <e p="Code" t="Include">
           <e p="Catalog" t="Include">
             <e p="CatalogManager.cs" t="Include" />
-            <e p="CharacterManager.cs" t="Include" />
+            <e p="CharacterLobby.cs" t="Include" />
             <e p="InventoryLobby.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
             <e p="ShopLobby.cs" t="Include" />

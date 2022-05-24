@@ -115,7 +115,7 @@ namespace Code.Login
         {
             var errorMessage = error.GenerateErrorReport();
             _loadingIndicatorView.ShowLoadingStatusInformation(ConnectionState.Fail,
-                "Something went wrong: {errorMessage}");
+                $"Something went wrong: {errorMessage}");
         }
 
         private void DeleteAccount()
@@ -134,7 +134,7 @@ namespace Code.Login
                 },
                 result => Debug.Log("Successfully updated user data"),
                 error => {
-                    Debug.Log("Got error setting user data Ancestor to Arthur");
+                    Debug.Log("Got error setting");
                     Debug.Log(error.GenerateErrorReport());
                 });
         }

@@ -10,20 +10,19 @@ namespace Code.Catalog
 {
     public class ShopLobby : IDisposable
     {
-        private readonly Transform _shop;
-        private readonly ItemStoreElementView _item;
-        private readonly List<ItemStoreElementView> _itemStoreElements;
         private readonly Dictionary<string, CatalogItem> _catalog;
+        private readonly List<LineElementView> _lineElements = new List<LineElementView>();
+        private readonly Transform _shopPanel;
+        private readonly LineElementView _lineElementView;
         private readonly InventoryLobby _inventoryLobby;
 
-        public ShopLobby(Transform shop, ItemStoreElementView item, InventoryLobby inventoryLobby,
-            Dictionary<string, CatalogItem> catalog)
+        public ShopLobby(Transform shopPanel, Dictionary<string, CatalogItem> catalog, LineElementView lineElementView,
+            InventoryLobby inventoryLobby)
         {
-            _shop = shop;
-            _item = item;
+            _shopPanel = shopPanel;
             _inventoryLobby = inventoryLobby;
             _catalog = catalog;
-            _itemStoreElements = new List<ItemStoreElementView>();
+            _lineElementView = lineElementView;
         }
 
         public void SetStoreItems()
@@ -36,15 +35,12 @@ namespace Code.Catalog
             {
                 foreach (var item in result.Store)
                 {
-                    var newItem = Object.Instantiate(_item, _shop);
+                    var newItem = Object.Instantiate(_lineElementView, _shopPanel);
                     newItem.gameObject.SetActive(true);
-                    
-                    var name = _catalog[item.ItemId].DisplayName;
-                    var cost = (int) item.VirtualCurrencyPrices["GD"];
-                    newItem.ShowItem(name, cost.ToString());
-
-                    newItem.BuyButton.onClick.AddListener(() => BuyItem(_catalog[item.ItemId]));
-                    _itemStoreElements.Add(newItem);
+                    newItem.TextUp.text = _catalog[item.ItemId].DisplayName;
+                    newItem.TextDown.text = $"{item.VirtualCurrencyPrices["GD"]} GD";
+                    newItem.Button.onClick.AddListener(() => BuyItem(_catalog[item.ItemId]));
+                    _lineElements.Add(newItem);
                 }
             }, Debug.LogError);
         }
@@ -60,16 +56,19 @@ namespace Code.Catalog
                         Price = (int) catalogItem.VirtualCurrencyPrices["GD"],
                         VirtualCurrency = "GD"
                     },
-                    success => { _inventoryLobby.UpdateInventory(); }, // UpdateInventory(); },
-                    error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
+                    success => 
+                    { 
+                        _inventoryLobby.UpdateCurrency();
+                        _inventoryLobby.UpdateInventory(); 
+                    }, error => { Debug.LogError($"Get User Inventory Failed: {error}"); });
             }
         }
 
         public void Dispose()
         {
-            for (int i = 0; i < _itemStoreElements.Count; i++)
+            for (int i = 0; i < _lineElements.Count; i++)
             {
-                _itemStoreElements[i].BuyButton.onClick.RemoveAllListeners();
+                _lineElements[i].Button.onClick.RemoveAllListeners();
             }
         }
     }

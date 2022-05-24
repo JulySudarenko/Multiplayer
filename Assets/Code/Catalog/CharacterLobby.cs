@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Code.View;
 using PlayFab;
 using PlayFab.ClientModels;
@@ -8,37 +9,38 @@ using Object = UnityEngine.Object;
 
 namespace Code.Catalog
 {
-    public class CharacterManager
+    public class CharacterLobby : IDisposable
     {
         private const string GOLD = "GD";
-
+        private readonly Dictionary<string, StoreItem> _characterCatalog = new Dictionary<string, StoreItem>();
+        private readonly Dictionary<string, CatalogItem> _catalog;
+        private readonly List<LineElementView> _elements = new List<LineElementView>();
         private readonly PlayerNamePanelView _enterNamePanel;
         private readonly Transform _charactersPanel;
         private readonly LineElementView _lineElement;
-
-        private readonly Dictionary<string, StoreItem> _characterCatalog = new Dictionary<string, StoreItem>();
-        private readonly Dictionary<string, CatalogItem> _catalog;
-        private List<LineElementView> _elements = new List<LineElementView>();
+        private readonly InventoryLobby _inventoryLobby;
         private StoreItem _storeItem;
-
         private string _characterName;
 
-        public CharacterManager(PlayerNamePanelView enterNamePanel, Transform charactersPanel,
-            LineElementView lineElement, Dictionary<string, CatalogItem> catalog)
+        public CharacterLobby(PlayerNamePanelView enterNamePanel, Transform charactersPanel,
+            LineElementView lineElement, Dictionary<string, CatalogItem> catalog, InventoryLobby inventoryLobby)
         {
             _enterNamePanel = enterNamePanel;
             _charactersPanel = charactersPanel;
             _lineElement = lineElement;
             _catalog = catalog;
-
+            _inventoryLobby = inventoryLobby;
             _enterNamePanel.NameInput.onEndEdit.AddListener(SetCharacterName);
             _enterNamePanel.AcceptNameButton.onClick.AddListener(CreateNewCharacter);
-            
+        }
+
+        public void LoadCharacters()
+        {
             ShowAllUserCharacters();
             CreateCharacterCatalog();
         }
 
-        public void SetCharacterName(string newName)
+        private void SetCharacterName(string newName)
         {
             _characterName = newName;
         }
@@ -65,7 +67,6 @@ namespace Code.Catalog
             PlayFabClientAPI.GetAllUsersCharacters(new ListUsersCharactersRequest(),
                 result =>
                 {
-                    Debug.Log($"Characters owned: + {result.Characters.Count}");
                     foreach (var character in result.Characters)
                     {
                         var characterLine = Object.Instantiate(_lineElement, _charactersPanel);
@@ -84,7 +85,7 @@ namespace Code.Catalog
                 var newAddButton = Object.Instantiate(_lineElement, _charactersPanel);
                 newAddButton.gameObject.SetActive(true);
                 newAddButton.TextUp.text = _catalog[storeItem.Key].DisplayName;
-                newAddButton.TextDown.text = $"{storeItem.Value.VirtualCurrencyPrices[GOLD].ToString()} {GOLD}";
+                newAddButton.TextDown.text = $"{storeItem.Value.VirtualCurrencyPrices[GOLD]} {GOLD}";
                 newAddButton.Button.onClick.AddListener(() => CreateCharacterPanel(storeItem.Value));
                 _elements.Add(newAddButton);
             }
@@ -103,10 +104,7 @@ namespace Code.Catalog
                 ItemId = _storeItem.ItemId,
                 Price = (int) _storeItem.VirtualCurrencyPrices[GOLD],
                 VirtualCurrency = GOLD
-            }, result =>
-            {
-                CreateCharacterWithItemId(_storeItem.ItemId);
-            }, Error);
+            }, result => { CreateCharacterWithItemId(_storeItem.ItemId); }, Error);
         }
 
         private void CreateCharacterWithItemId(string itemId)
@@ -119,7 +117,7 @@ namespace Code.Catalog
             }, result =>
             {
                 Debug.Log($"Get character type: {result.CharacterType}");
-
+                _inventoryLobby.UpdateCurrency();
                 UpdateCharacterStatistics(result.CharacterId);
             }, Error);
         }
@@ -166,13 +164,13 @@ namespace Code.Catalog
                 }, Error);
         }
 
-        public void UpdateCharacterView(string characterId, TMP_Text text)
+        private void UpdateCharacterView(string characterId, TMP_Text text)
         {
             PlayFabClientAPI.GetCharacterStatistics(new GetCharacterStatisticsRequest
                 {
                     CharacterId = characterId
                 },
-                result => { text.text = result.CharacterStatistics["Level"].ToString(); },
+                result => { text.text = $"{result.CharacterStatistics["Level"]} Level"; },
                 Debug.LogError);
         }
 
@@ -182,7 +180,7 @@ namespace Code.Catalog
             _enterNamePanel.AcceptNameButton.interactable = true;
         }
 
-        public void OnDestroy()
+        public void Dispose()
         {
             _enterNamePanel.NameInput.onEndEdit.RemoveListener(SetCharacterName);
             _enterNamePanel.AcceptNameButton.onClick.RemoveListener(CreateNewCharacter);

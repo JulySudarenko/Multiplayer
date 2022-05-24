@@ -9,17 +9,21 @@ namespace Code.Catalog
     public class CatalogManager
     {
         private readonly ShopLobby _shopLobby;
-
         private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
-        public Dictionary<string, CatalogItem> Catalog => _catalog;
+        private readonly CharacterLobby _characterLobby;
 
-        public CatalogManager(TextElementView gold, TextElementView experience, Transform shop,
-            ItemStoreElementView item, Transform inventory, TextElementView inventoryItem)
+        public CatalogManager(Transform shopPanel, Transform inventoryPanel, Transform characterPanel,
+            PlayerNamePanelView enterNamePanel, TextElementView gold, TextElementView experience,
+            LineElementView lineElement)
         {
-            var inventory1 = new InventoryLobby(inventoryItem, inventory, gold, experience);
-            _shopLobby = new ShopLobby(shop, item, inventory1, _catalog);
+            var inventoryLobby =
+                new InventoryLobby(inventoryPanel, gold, experience, lineElement);
+            
+            _shopLobby = new ShopLobby(shopPanel, _catalog, lineElement, inventoryLobby);
+            _characterLobby = new CharacterLobby(enterNamePanel, characterPanel, lineElement, _catalog, inventoryLobby);
             PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess, OnFailure);
-            inventory1.UpdateInventory();
+            inventoryLobby.UpdateInventory();
+            inventoryLobby.UpdateCurrency();
         }
 
         private void OnFailure(PlayFabError error)
@@ -32,7 +36,7 @@ namespace Code.Catalog
         {
             HandleCatalog(result.Catalog);
             _shopLobby.SetStoreItems();
-            Debug.Log($"Catalog was loaded successfully!");
+            _characterLobby.LoadCharacters();
         }
 
         private void HandleCatalog(List<CatalogItem> catalog)
