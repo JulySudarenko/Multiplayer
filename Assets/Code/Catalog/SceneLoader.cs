@@ -1,7 +1,6 @@
 ﻿using Code.View;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Code.Catalog
@@ -13,14 +12,20 @@ namespace Code.Catalog
         [SerializeField] private Button _profileButton;
         [SerializeField] private GameObject _gameRoomsPanel;
         [SerializeField] private GameObject _profilePanel;
-
+        
+        [SerializeField] private PlayerNamePanelView _enterNamePanel;
+        [SerializeField] private Transform _shopSlider;
+        [SerializeField] private Transform _inventorySlider;
+        [SerializeField] private Transform _charactersSlider;
+        [SerializeField] private LineElementView _lineElement;
         [SerializeField] private TextElementView _gold;
         [SerializeField] private TextElementView _experience;
         [SerializeField] private TextElementView _inventoryItem;
-        [SerializeField] private Transform _shopSlider;
-        [SerializeField] private Transform _inventorySlider;
         [SerializeField] private ItemStoreElementView _item;
 
+        private CatalogManager _catalogManager;
+        private CharacterManager _characterManager;
+        
         private void Awake()
         {
             _backButton.onClick.AddListener(() => LoadScene("Launcher"));
@@ -28,8 +33,12 @@ namespace Code.Catalog
             _profileButton.onClick.AddListener(GoToProfile);
             GoToProfile();
 
-            var catalogManager =
-                new CatalogManager(_gold, _experience, _shopSlider, _item, _inventorySlider, _inventoryItem);
+            _catalogManager = new CatalogManager(_gold, _experience, _shopSlider, _item, _inventorySlider, _inventoryItem);
+        }
+
+        private void Start()
+        {
+            _characterManager = new CharacterManager(_enterNamePanel, _charactersSlider, _lineElement, _catalogManager.Catalog);
         }
 
         private void LoadScene(string scene)
@@ -54,6 +63,7 @@ namespace Code.Catalog
             _backButton.onClick.RemoveAllListeners();
             _gameRoomsButton.onClick.RemoveAllListeners();
             _profileButton.onClick.RemoveAllListeners();
+            _characterManager.OnDestroy();
         }
     }
 }

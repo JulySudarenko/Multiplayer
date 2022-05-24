@@ -1,85 +1,117 @@
 ﻿using System.Collections.Generic;
 using Code.View;
-using Photon.Pun;
 using PlayFab;
 using PlayFab.ClientModels;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace Code.Catalog
 {
-    public class CharacterManager : MonoBehaviourPunCallbacks
+    public class CharacterManager
     {
         private const string GOLD = "GD";
 
-        [SerializeField] private PlayerNamePanelView _enterNamePanel;
+        private readonly PlayerNamePanelView _enterNamePanel;
+        private readonly Transform _charactersPanel;
+        private readonly LineElementView _lineElement;
+
+        private readonly Dictionary<string, StoreItem> _characterCatalog = new Dictionary<string, StoreItem>();
+        private readonly Dictionary<string, CatalogItem> _catalog;
+        private List<LineElementView> _elements = new List<LineElementView>();
+        private StoreItem _storeItem;
+
         private string _characterName;
-        public static string _playCharacterName;
 
-        [Space(20)] [SerializeField] private Button[] _addCharacters;
-        [SerializeField] private LineElementView[] _useCharacters;
-
-        private void Start()
+        public CharacterManager(PlayerNamePanelView enterNamePanel, Transform charactersPanel,
+            LineElementView lineElement, Dictionary<string, CatalogItem> catalog)
         {
-            UpdateCharacterSlots();
+            _enterNamePanel = enterNamePanel;
+            _charactersPanel = charactersPanel;
+            _lineElement = lineElement;
+            _catalog = catalog;
+
             _enterNamePanel.NameInput.onEndEdit.AddListener(SetCharacterName);
-             foreach (var character in _addCharacters)
-             {
-                 character.gameObject.SetActive(false);
-                 character.onClick.AddListener(() => _enterNamePanel.OpenClosePanel(true));
-             }
+            _enterNamePanel.AcceptNameButton.onClick.AddListener(CreateNewCharacter);
             
-             for (int i = 0; i < _useCharacters.Length; i++)
-             {
-                 var temp = i;
-                 _useCharacters[i].gameObject.SetActive(false);
-                 _useCharacters[i].Button.onClick.AddListener(() =>
-                 {
-                     _playCharacterName = _useCharacters[temp].TextUp.text;
-                 });
-             }
-            
-             _enterNamePanel.AcceptNameButton.onClick.AddListener(GetCharacterTokens);
+            ShowAllUserCharacters();
+            CreateCharacterCatalog();
         }
 
         public void SetCharacterName(string newName)
         {
             _characterName = newName;
         }
-        
-        private void GetCharacterTokens()
+
+        private void CreateCharacterCatalog()
         {
-            _enterNamePanel.AcceptNameButton.interactable = false;
             PlayFabClientAPI.GetStoreItems(new GetStoreItemsRequest
             {
                 CatalogVersion = "0.1",
                 StoreId = "Characters_store"
             }, result =>
             {
-                CreateNewCharacter(result.Store[0]);
+                foreach (var storeItem in result.Store)
+                {
+                    _characterCatalog.Add(storeItem.ItemId, storeItem);
+                }
 
+                CreateAddCharactersButtons();
             }, Error);
         }
-        
-         private void CreateNewCharacter(StoreItem storeItem)
+
+        private void ShowAllUserCharacters()
+        {
+            PlayFabClientAPI.GetAllUsersCharacters(new ListUsersCharactersRequest(),
+                result =>
+                {
+                    Debug.Log($"Characters owned: + {result.Characters.Count}");
+                    foreach (var character in result.Characters)
+                    {
+                        var characterLine = Object.Instantiate(_lineElement, _charactersPanel);
+                        characterLine.gameObject.SetActive(true);
+                        characterLine.TextUp.text = $"{character.CharacterName} {character.CharacterType}";
+                        UpdateCharacterView(character.CharacterId, characterLine.TextDown);
+                        _elements.Add(characterLine);
+                    }
+                }, Error);
+        }
+
+        private void CreateAddCharactersButtons()
+        {
+            foreach (var storeItem in _characterCatalog)
+            {
+                var newAddButton = Object.Instantiate(_lineElement, _charactersPanel);
+                newAddButton.gameObject.SetActive(true);
+                newAddButton.TextUp.text = _catalog[storeItem.Key].DisplayName;
+                newAddButton.TextDown.text = $"{storeItem.Value.VirtualCurrencyPrices[GOLD].ToString()} {GOLD}";
+                newAddButton.Button.onClick.AddListener(() => CreateCharacterPanel(storeItem.Value));
+                _elements.Add(newAddButton);
+            }
+        }
+
+        private void CreateCharacterPanel(StoreItem storeItem)
+        {
+            _storeItem = storeItem;
+            _enterNamePanel.OpenClosePanel(true);
+        }
+
+        private void CreateNewCharacter()
         {
             PlayFabClientAPI.PurchaseItem(new PurchaseItemRequest
             {
-                ItemId = storeItem.ItemId,
-                Price = (int) storeItem.VirtualCurrencyPrices[GOLD],
+                ItemId = _storeItem.ItemId,
+                Price = (int) _storeItem.VirtualCurrencyPrices[GOLD],
                 VirtualCurrency = GOLD
             }, result =>
             {
-                foreach (var item in result.Items)
-                {
-                    CreateCharacterWithItemId(item.ItemId);
-                    return;
-                }
+                CreateCharacterWithItemId(_storeItem.ItemId);
             }, Error);
         }
-        
+
         private void CreateCharacterWithItemId(string itemId)
         {
+            _enterNamePanel.AcceptNameButton.interactable = false;
             PlayFabClientAPI.GrantCharacterToUser(new GrantCharacterToUserRequest
             {
                 CharacterName = _characterName,
@@ -87,11 +119,11 @@ namespace Code.Catalog
             }, result =>
             {
                 Debug.Log($"Get character type: {result.CharacterType}");
-        
+
                 UpdateCharacterStatistics(result.CharacterId);
             }, Error);
         }
-        
+
         private void UpdateCharacterStatistics(string characterId)
         {
             PlayFabClientAPI.UpdateCharacterStatistics(new UpdateCharacterStatisticsRequest
@@ -101,66 +133,63 @@ namespace Code.Catalog
                 {
                     {"Level", 1},
                     {"Exp", 0},
-                    {"Gold", 0}
+                    {"Gold", 0},
+                    {"Damage", 20},
+                    {"Health", 100}
                 }
             }, result =>
             {
                 _enterNamePanel.OpenClosePanel(false);
                 _enterNamePanel.AcceptNameButton.interactable = true;
-        
-                UpdateCharacterSlots();
+
+                UpdateCharacterSlots(characterId);
             }, Error);
         }
 
-        private void UpdateCharacterSlots()
+        private void UpdateCharacterSlots(string characterId)
         {
             PlayFabClientAPI.GetAllUsersCharacters(new ListUsersCharactersRequest(),
                 result =>
                 {
-                    Debug.Log($"Count Characters: {result.Characters.Count}");
-
-                    foreach (var character in _addCharacters)
-                        character.gameObject.SetActive(true);
-                    foreach (var character in _useCharacters)
-                        character.gameObject.SetActive(false);
-
-                    for (int i = 0; i < result.Characters.Count; i++)
+                    foreach (var character in result.Characters)
                     {
-                        _addCharacters[i].gameObject.SetActive(false);
-                        _useCharacters[i].gameObject.SetActive(true);
+                        if (character.CharacterId == characterId)
+                        {
+                            var characterLine = Object.Instantiate(_lineElement, _charactersPanel);
+                            characterLine.gameObject.SetActive(true);
+                            characterLine.TextUp.text = $"{character.CharacterName} {character.CharacterType}";
 
-                        _useCharacters[i].TextUp.text = result.Characters[i].CharacterName;
-                        UpdateCharacterView(result.Characters[i].CharacterId, i);
+                            UpdateCharacterView(character.CharacterId, characterLine.TextDown);
+                            _elements.Add(characterLine);
+                        }
                     }
-                }, Debug.LogError);
+                }, Error);
         }
-        
-        public void UpdateCharacterView(string characterId, int numberSlots)
+
+        public void UpdateCharacterView(string characterId, TMP_Text text)
         {
             PlayFabClientAPI.GetCharacterStatistics(new GetCharacterStatisticsRequest
-            {
-                CharacterId = characterId
-            }, result =>
-            {
-                _useCharacters[numberSlots].TextDown.text = result.CharacterStatistics["Level"].ToString();
-            }, Debug.LogError);
+                {
+                    CharacterId = characterId
+                },
+                result => { text.text = result.CharacterStatistics["Level"].ToString(); },
+                Debug.LogError);
         }
-        
+
         private void Error(PlayFabError error)
         {
             Debug.LogError(error.GenerateErrorReport());
             _enterNamePanel.AcceptNameButton.interactable = true;
         }
 
-        public override void OnJoinedRoom()
-        {
-            base.OnJoinedRoom();
-            UpdateCharacterSlots();
-        }
-
-        private void OnDestroy()
+        public void OnDestroy()
         {
             _enterNamePanel.NameInput.onEndEdit.RemoveListener(SetCharacterName);
+            _enterNamePanel.AcceptNameButton.onClick.RemoveListener(CreateNewCharacter);
+            foreach (var element in _elements)
+            {
+                element.Button.onClick.RemoveAllListeners();
+            }
         }
     }
 }

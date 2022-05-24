@@ -11,7 +11,6 @@ namespace Code.Catalog
         private readonly ShopLobby _shopLobby;
 
         private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
-
         public Dictionary<string, CatalogItem> Catalog => _catalog;
 
         public CatalogManager(TextElementView gold, TextElementView experience, Transform shop,
