@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Code.View;
 using PlayFab;
 using PlayFab.ClientModels;
@@ -11,7 +10,7 @@ namespace Code.Game
 {
     public class MyGameManager : MonoBehaviour
     {
-        private List<LineElementView> _lineElements = new List<LineElementView>();
+        private readonly List<LineElementView> _lineElements = new List<LineElementView>();
         [SerializeField] private GameObject _robotPrefab;
         [SerializeField] private GameObject _magPrefab;
         [SerializeField] private Transform _spawnPlaces;
@@ -36,7 +35,7 @@ namespace Code.Game
                     {
                         var characterLine = Object.Instantiate(_lineElement, _characterSelectedPanel);
                         characterLine.gameObject.SetActive(true);
-                        characterLine.TextUp.text = $"{character.CharacterName} {character.CharacterType}";
+                        characterLine.TextUp.text = $"{character.CharacterName}";
                         characterLine.Button.onClick.AddListener(() => SelectCharacter(character.CharacterType));
                         UpdateCharacterView(character.CharacterId, characterLine.TextDown);
                         _lineElements.Add(characterLine);

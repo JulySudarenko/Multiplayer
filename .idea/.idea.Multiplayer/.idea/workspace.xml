@@ -20,16 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/InventoryLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/InventoryLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/PlayerDiamond.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/PlayerDiamond.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Profile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Profile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/MyGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/MyGameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
