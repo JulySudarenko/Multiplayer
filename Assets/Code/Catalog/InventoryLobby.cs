@@ -10,20 +10,21 @@ namespace Code.Catalog
 {
     public class InventoryLobby : IDisposable
     {
+        private readonly Dictionary<string, CatalogItem> _catalog;
         private readonly List<LineElementView> _lineElements = new List<LineElementView>();
         private readonly Transform _inventoryPanel;
         private readonly TextElementView _gold;
         private readonly TextElementView _experience;
         private readonly LineElementView _lineElementView;
-        private CatalogItem _item;
 
         public InventoryLobby(Transform inventoryPanel, TextElementView gold, TextElementView experience,
-            LineElementView lineElementView)
+            LineElementView lineElementView, Dictionary<string, CatalogItem> catalog)
         {
             _inventoryPanel = inventoryPanel;
             _gold = gold;
             _experience = experience;
             _lineElementView = lineElementView;
+            _catalog = catalog;
         }
 
         public void UpdateCurrency()
@@ -64,6 +65,7 @@ namespace Code.Catalog
                         item.TextUp.text = invItem.DisplayName;
                         item.gameObject.SetActive(true);
                         _lineElements.Add(item);
+                        //item.Button.onClick.AddListener(() => UseInventoryItem(_catalog[invItem.ItemId]));
                     }
                 },
                 error => { Debug.LogError($"Get User Inventory Failed: {error}"); });

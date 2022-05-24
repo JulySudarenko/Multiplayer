@@ -17,7 +17,7 @@ namespace Code.Catalog
             LineElementView lineElement)
         {
             var inventoryLobby =
-                new InventoryLobby(inventoryPanel, gold, experience, lineElement);
+                new InventoryLobby(inventoryPanel, gold, experience, lineElement, _catalog);
             
             _shopLobby = new ShopLobby(shopPanel, _catalog, lineElement, inventoryLobby);
             _characterLobby = new CharacterLobby(enterNamePanel, characterPanel, lineElement, _catalog, inventoryLobby);

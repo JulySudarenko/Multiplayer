@@ -23,13 +23,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/CharacterLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/CharacterManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/CharacterLobby.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/InventoryLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/InventoryLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Catalog/ShopLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Catalog/ShopLobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ListButtonElement.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ListButtonElement.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/PlayerDiamond.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Materials/PlayerDiamond.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Profile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Profile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Profile.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Code/AuthorizationMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/LoadingIndicatorWidget.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/PlayFabLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/CatalogManager.cs" />
@@ -86,19 +83,21 @@
         <option value="$PROJECT_DIR$/Assets/Code/View/PlayersElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/View/CurrencyStoreElementView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/RoomsList.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/View/TextElementView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/View/LineElementView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PhotonLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/SceneLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Login/PlayFabLogin.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/ShopLobby.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Catalog/InventoryLobby.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/CharacterLobby.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Catalog/InventoryLobby.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/MyGameManager.cs" />
       </list>
     </option>
   </component>

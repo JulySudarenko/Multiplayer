@@ -19,6 +19,7 @@
             <e p="CharacterController.cs" t="Include" />
             <e p="CharacterSpawner.cs" t="Include" />
             <e p="CharacterView.cs" t="Include" />
+            <e p="MyGameManager.cs" t="Include" />
             <e p="Names.cs" t="Include" />
           </e>
           <e p="GameRooms" t="Include">
