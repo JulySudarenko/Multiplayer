@@ -15,6 +15,7 @@
             <e p="ShopLobby.cs" t="Include" />
           </e>
           <e p="Game" t="Include">
+            <e p="CharacterAnimatorController.cs" t="Include" />
             <e p="CharacterAnimatorManager.cs" t="Include" />
             <e p="CharacterController.cs" t="Include" />
             <e p="CharacterSpawner.cs" t="Include" />

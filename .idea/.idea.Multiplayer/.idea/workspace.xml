@@ -20,7 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b80e46c-a97c-4257-8002-2ae2369912ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/MyGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/MyGameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Multiplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayFabSDK/Shared/Public/Resources/PlayFabSharedSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayFabSDK/Shared/Public/Resources/PlayFabSharedSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CharacterInfo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CharacterInfo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotKyle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotKyle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotMag.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/MyRobotMag.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameForest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +63,6 @@
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerAnimatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterAnimatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanelView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/GameRooms/PlayerNamePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Lobby/LobbyLoader.cs" />
@@ -86,9 +94,10 @@
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/CatalogManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Catalog/InventoryLobby.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Game/MyGameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterAnimatorManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Game/CharacterSpawner.cs" />
       </list>
     </option>
   </component>

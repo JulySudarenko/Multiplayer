@@ -1168,6 +1168,7 @@ GameObject:
   - component: {fileID: 7706227040893262776}
   - component: {fileID: 7706227040893194064}
   - component: {fileID: 7706227041477699223}
+  - component: {fileID: 3897973813383433697}
   m_Layer: 0
   m_Name: MyRobotMag
   m_TagString: Player
@@ -1235,7 +1236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7706227040883400900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 507e5741cec8a42dc964c8e0a4b55bd6, type: 3}
   m_Name: 
@@ -1362,6 +1363,19 @@ MonoBehaviour:
   _healthView: {fileID: 4277284125371970473, guid: 5573eadd48b5b2e498e4ae54c072e7c8,
     type: 3}
   _magicalRay: {fileID: 7706227040883474284}
+--- !u!114 &3897973813383433697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706227040883400900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6a49b9cd8c436e84a83775d72402bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _directionDampTime: 0.25
 --- !u!1 &7706227040883400902
 GameObject:
   m_ObjectHideFlags: 0
