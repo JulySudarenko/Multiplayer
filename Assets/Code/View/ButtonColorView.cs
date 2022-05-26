@@ -1,11 +1,12 @@
 ﻿using System;
+using Code.Login;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.Login
+namespace Code.View
 {
-    public class ButtonColorWidget : MonoBehaviour
+    public class ButtonColorView : MonoBehaviour
     {
         [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _message;

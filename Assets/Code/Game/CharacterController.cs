@@ -8,14 +8,16 @@ using UnityEngine;
 
 namespace Code.Game
 {
-    internal class CharacterManager : MonoBehaviourPun, IPunObservable
+    public class CharacterController : MonoBehaviourPun, IPunObservable
     {
-        [SerializeField] private float _health;
-        [SerializeField] private PlayerUI _healthUI;
+        public float Health => _health;
+
+        [SerializeField] private GameObject _healthView;
         [SerializeField] private GameObject _magicalRay;
 
+        private float _health;
         private bool _isFiring;
-        
+
         private void Awake()
         {
             if (_magicalRay == null)
@@ -32,7 +34,7 @@ namespace Code.Game
 
         private void Start()
         {
-            CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
+            CameraWork _cameraWork = gameObject.GetComponent<CameraWork>();
             if (_cameraWork != null)
             {
                 if (photonView.IsMine)
@@ -44,10 +46,22 @@ namespace Code.Game
             {
                 Debug.LogError("Missing CameraWork Component on playerPrefab.", this);
             }
+            
+            if (_healthView != null)
+            {
+                GameObject _uiGo = Instantiate(_healthView);
+                _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+            }
+            else
+            {
+                Debug.LogWarning("<Color=Red><b>Missing</b></Color> PlayerUiPrefab reference on player Prefab.", this);
+            }
         }
-        private void GetUserData() 
+        
+        private void GetUserData()
         {
-            PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result => {
+            PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result =>
+            {
                 Debug.Log("Got user data:");
                 if (result.Data == null || !result.Data.ContainsKey("Health"))
                     Debug.Log("No params health");
@@ -56,11 +70,13 @@ namespace Code.Game
                     _health = Convert.ToSingle(result.Data["Health"].Value);
                     Debug.Log("Health: " + result.Data["Health"].Value);
                 }
-            }, error => {
+            }, error =>
+            {
                 Debug.Log("Got error retrieving user data:");
                 Debug.Log(error.GenerateErrorReport());
             });
         }
+
         private void Update()
         {
             if (photonView.IsMine)
@@ -69,27 +85,22 @@ namespace Code.Game
             }
         }
 
-        public void UpdatePlayerCharacteristics(float health)
-        {
-            _health = health;
-        }
-        
         private void ProcessInputs()
         {
             if (Input.GetButtonDown("Attack"))
             {
-                if (!this._isFiring)
+                if (!_isFiring)
                 {
-                    this._isFiring = true;
+                    _isFiring = true;
                     _magicalRay.SetActive(true);
                 }
             }
 
             if (Input.GetButtonUp("Attack"))
             {
-                if (this._isFiring)
+                if (_isFiring)
                 {
-                    this._isFiring = false;
+                    _isFiring = false;
                     _magicalRay.SetActive(false);
                 }
             }
@@ -103,9 +114,8 @@ namespace Code.Game
             }
             else
             {
-                this._isFiring = (bool) stream.ReceiveNext();
+                _isFiring = (bool) stream.ReceiveNext();
             }
         }
     }
-
 }

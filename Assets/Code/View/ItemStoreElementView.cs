@@ -2,9 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.Catalog
+namespace Code.View
 {
-    public class ItemStoreElement : MonoBehaviour
+    public class ItemStoreElementView : MonoBehaviour
     {
         [SerializeField] private TMP_Text _itemElementName;
         [SerializeField] private TMP_Text _itemElementAmount;

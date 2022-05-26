@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Code.View;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,12 +13,15 @@ namespace Code.Catalog
         [SerializeField] private GameObject _gameRoomsPanel;
         [SerializeField] private GameObject _profilePanel;
 
-        [SerializeField] private CurrencyStoreElement _gold;
-        [SerializeField] private CurrencyStoreElement _experience;
-        [SerializeField] private Transform _itemListSlider;
-        [SerializeField] private ItemStoreElement _item;
+        [SerializeField] private PlayerNamePanelView _enterNamePanel;
+        [SerializeField] private Transform _shopPanel;
+        [SerializeField] private Transform _inventoryPanel;
+        [SerializeField] private Transform _charactersPanel;
+        [SerializeField] private LineElementView _lineElement;
+        [SerializeField] private TextElementView _gold;
+        [SerializeField] private TextElementView _experience;
+        [SerializeField] private TextElementView _inventoryItem;
 
-        private CatalogManager _catalogManager;
 
         private void Awake()
         {
@@ -25,9 +29,10 @@ namespace Code.Catalog
             _gameRoomsButton.onClick.AddListener(GoToRoomsList);
             _profileButton.onClick.AddListener(GoToProfile);
             GoToProfile();
-            
-            _catalogManager = GetComponent<CatalogManager>();
-            _catalogManager.CreateCatalog(_gold, _experience, _itemListSlider, _item);
+
+            var catalogManager =
+                new CatalogManager(_shopPanel, _inventoryPanel, _charactersPanel, _enterNamePanel, 
+                    _gold, _experience, _lineElement);
         }
 
         private void LoadScene(string scene)
@@ -52,8 +57,6 @@ namespace Code.Catalog
             _backButton.onClick.RemoveAllListeners();
             _gameRoomsButton.onClick.RemoveAllListeners();
             _profileButton.onClick.RemoveAllListeners();
-
-            _catalogManager.OnDestroy();
         }
     }
 }

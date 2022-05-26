@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using Code.View;
+using Photon.Pun;
 using PlayFab;
 using PlayFab.ClientModels;
 using TMPro;

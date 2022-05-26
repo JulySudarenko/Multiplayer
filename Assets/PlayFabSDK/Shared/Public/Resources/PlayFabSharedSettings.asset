@@ -15,7 +15,7 @@ MonoBehaviour:
   TitleId: 2402C
   DeveloperSecretKey: 38C5K9UQZMABIXTET6CMG78R1D9KHFZJ5CKBNAEAIT5CMM1GOP
   ProductionEnvironmentUrl: 
-  RequestType: 2
+  RequestType: 0
   DisableDeviceInfo: 0
   DisableFocusTimeCollection: 0
   RequestTimeout: 2000

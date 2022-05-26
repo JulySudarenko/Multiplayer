@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
+using Code.Login;
 using TMPro;
 using UnityEngine;
 
-namespace Code.Login
+namespace Code.View
 {
-    public class LoadingIndicatorWidget : MonoBehaviour
+    public class LoadingIndicatorView : MonoBehaviour
     {
         [SerializeField] private TMP_Text _loadingMessage;
         [SerializeField] private GameObject _loadingImage;

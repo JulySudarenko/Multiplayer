@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.GameRooms
+namespace Code.View
 {
-    internal class PlayerNamePanelView : MonoBehaviour
+    public class PlayerNamePanelView : MonoBehaviour
     {
         [SerializeField] private GameObject _panel;
         [SerializeField] private InputField _nameInput;
